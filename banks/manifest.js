@@ -1,0 +1,1 @@
+window.G011_BANK_MANIFEST={"defaultBankId":"BANK-01","banks":[{"bankId":"BANK-01","bankVersion":"v1","file":"banks/BANK-01.v1.js","status":"approved"}]};

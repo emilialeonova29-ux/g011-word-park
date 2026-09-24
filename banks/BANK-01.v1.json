@@ -1,0 +1,104 @@
+{
+  "gameId": "G-011",
+  "bankId": "BANK-01",
+  "bankVersion": "v1",
+  "title": "Первый банк",
+  "status": "approved",
+  "zones": {
+    "synonyms": [
+      {
+        "id": "SYN-001",
+        "left": "смелый",
+        "right": "храбрый"
+      },
+      {
+        "id": "SYN-002",
+        "left": "весёлый",
+        "right": "радостный"
+      },
+      {
+        "id": "SYN-003",
+        "left": "врач",
+        "right": "доктор"
+      }
+    ],
+    "antonyms": [
+      {
+        "id": "ANT-001",
+        "left": "горячий",
+        "right": "холодный"
+      },
+      {
+        "id": "ANT-002",
+        "left": "высокий",
+        "right": "низкий"
+      },
+      {
+        "id": "ANT-003",
+        "left": "добрый",
+        "right": "злой"
+      }
+    ],
+    "homonyms": [
+      {
+        "id": "HOM-001",
+        "word": "ЛУК",
+        "meanings": [
+          {
+            "label": "луковица",
+            "asset": "assets/homonyms/onion.svg"
+          },
+          {
+            "label": "лук со стрелой",
+            "asset": "assets/homonyms/bow.svg"
+          }
+        ]
+      },
+      {
+        "id": "HOM-002",
+        "word": "КОСА",
+        "meanings": [
+          {
+            "label": "заплетённые волосы",
+            "asset": "assets/homonyms/braid.svg"
+          },
+          {
+            "label": "коса для травы",
+            "asset": "assets/homonyms/scythe.svg"
+          }
+        ]
+      },
+      {
+        "id": "HOM-003",
+        "word": "КЛЮЧ",
+        "meanings": [
+          {
+            "label": "ключ от двери",
+            "asset": "assets/homonyms/key.svg"
+          },
+          {
+            "label": "родник",
+            "asset": "assets/homonyms/spring.svg"
+          }
+        ]
+      }
+    ],
+    "idioms": [
+      {
+        "id": "IDI-001",
+        "left": "рукой подать",
+        "right": "очень близко"
+      },
+      {
+        "id": "IDI-002",
+        "left": "водить за нос",
+        "right": "обманывать"
+      },
+      {
+        "id": "IDI-003",
+        "left": "сидеть сложа руки",
+        "right": "ничего не делать"
+      }
+    ]
+  }
+}
