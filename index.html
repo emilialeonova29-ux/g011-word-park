@@ -65,6 +65,363 @@ button{touch-action:manipulation}
 @media(max-width:620px){.approved-characters{right:50%;transform:translateX(50%);width:250px;bottom:4px}.approved-final-characters{right:50%;transform:translateX(50%);width:210px;bottom:0}.feedback-row{gap:7px}.zone-characters{width:92px;height:68px;border-radius:18px}.feedback-row .feedback{margin-top:11px}}
 @media(max-width:360px){.zone-characters{width:76px;height:60px}.approved-characters{width:225px}.approved-final-characters{width:190px}}
 </style>
+
+<style id="g011-approved-visual-theme">
+/* G-011 visual correction: approved scenic language only. Gameplay/data architecture unchanged. */
+:root{
+  --scene-bg:url("assets/visual/scene-synonyms-bg.jpg");
+  --scene-cats:url("assets/visual/cats-synonyms.png");
+  --parchment:#fff1c7;
+  --parchment-deep:#e8bd73;
+  --navy:#173755;
+}
+html,body{background:#163b42}
+.app{
+  background:
+    radial-gradient(circle at 18% 8%,rgba(255,227,133,.13),transparent 23%),
+    linear-gradient(180deg,#214f53,#173f3d);
+}
+.app::before,.cloud,.park-path,.tree,.lamp{display:none!important}
+.header{
+  max-width:1320px;padding:12px 18px 0;
+}
+.brand{
+  background:rgba(255,249,225,.92);border:2px solid rgba(124,87,46,.45);
+  padding:7px 12px;border-radius:16px;box-shadow:0 8px 24px rgba(24,44,37,.18);
+  backdrop-filter:blur(8px);
+}
+.brand-badge{background:linear-gradient(145deg,#f6cc66,#e59745);border-color:#fff2c8}
+.brand small{color:#6a604d}
+.ghost{
+  background:rgba(255,249,225,.91);border:2px solid rgba(124,87,46,.32);
+  color:#39556b;box-shadow:0 8px 20px rgba(26,52,45,.16)
+}
+.shell{max-width:1320px;padding:0 18px 36px;margin-top:10px}
+
+/* START — full scenic world, no large white UI slab */
+#startScreen{
+  position:relative;overflow:hidden;min-height:760px;border-radius:34px;
+  background:
+    linear-gradient(180deg,rgba(7,35,35,.02),rgba(8,45,31,.10)),
+    url("assets/visual/scene-start.jpg") center/cover no-repeat;
+  box-shadow:0 24px 70px rgba(10,34,31,.35);
+  border:2px solid rgba(255,244,206,.72);
+}
+#startScreen .hero{display:block;min-height:760px;padding:0}
+#startScreen .scene-card{display:none}
+#startScreen .hero-card{
+  position:absolute;left:28px;bottom:25px;width:min(500px,calc(100% - 56px));
+  background:linear-gradient(145deg,rgba(255,247,216,.96),rgba(255,236,185,.93));
+  border:3px solid rgba(142,98,53,.58);border-radius:24px;padding:18px 20px;
+  box-shadow:0 16px 35px rgba(43,49,28,.24);backdrop-filter:blur(6px);
+}
+#startScreen .author-mark{background:rgba(255,255,255,.62);color:#34604c}
+#startScreen .author-series{color:#5f604f}
+#startScreen .hero h1{font-size:31px;margin:9px 0 7px;letter-spacing:-.025em;color:var(--navy)}
+#startScreen .hero p{font-size:14px;line-height:1.38;margin:0 0 10px;color:#41576a}
+#startScreen .instruction{
+  margin:10px 0 12px;padding:9px 11px;background:rgba(255,255,255,.62);
+  border:1px solid rgba(112,88,51,.18);font-size:13px
+}
+#startScreen .primary{
+  background:linear-gradient(180deg,#61b94d,#328e42);
+  border:2px solid #ecffd9;box-shadow:0 5px 0 #236a36,0 11px 22px rgba(36,89,38,.25);
+}
+#startScreen .bank-status{background:rgba(255,241,237,.92)}
+
+/* GAME — scenic background + live cards. The approved art is atmosphere, not baked content. */
+#gameScreen{
+  position:relative;isolation:isolate;min-height:720px;border-radius:32px;overflow:hidden;
+  padding:24px 270px 28px 160px;
+  box-shadow:0 24px 70px rgba(10,34,31,.35);border:2px solid rgba(255,244,206,.62);
+}
+#gameScreen::before{
+  content:"";position:absolute;z-index:-2;inset:0;
+  background-image:
+    linear-gradient(180deg,rgba(15,31,31,.03),rgba(18,36,28,.15)),
+    var(--scene-bg);
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+}
+#gameScreen::after{
+  content:"";position:absolute;z-index:2;right:-4px;bottom:-3px;width:300px;height:300px;
+  background:var(--scene-cats) right bottom/contain no-repeat;pointer-events:none;
+  filter:drop-shadow(0 12px 18px rgba(25,39,25,.18));
+}
+#gameScreen .progress-strip{
+  position:absolute;z-index:5;left:18px;top:94px;width:126px;margin:0;
+  display:flex;flex-direction:column;gap:8px;
+}
+#gameScreen .piece{
+  min-height:58px;padding:8px 9px;border-radius:15px;
+  background:linear-gradient(145deg,rgba(39,91,117,.94),rgba(30,68,91,.95));
+  color:white;border:2px solid rgba(244,213,134,.42);
+  box-shadow:0 10px 22px rgba(20,38,34,.23);backdrop-filter:blur(4px)
+}
+#gameScreen .piece .n{background:#f3ca67;color:#274b56}
+#gameScreen .piece b{color:#fff;font-size:11px}
+#gameScreen .piece span{color:#e7f1ed;font-size:9px}
+#gameScreen .piece.done{background:linear-gradient(145deg,#3e875e,#2d6d51);border-color:#f4d978}
+#gameScreen .piece.current{outline:3px solid rgba(250,218,117,.72);background:linear-gradient(145deg,#3c7192,#2b5773)}
+#gameScreen .game-card{
+  position:relative;z-index:4;overflow:visible;padding:0;
+  background:transparent;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;
+}
+#gameScreen .game-card::before{display:none}
+#gameScreen .zone-head{
+  display:block;text-align:center;width:min(720px,100%);margin:0 auto 18px;
+  background:linear-gradient(180deg,#fff5d5,#f4d28c);
+  border:3px solid #a97846;border-radius:18px;padding:11px 18px;
+  box-shadow:0 6px 0 rgba(111,73,38,.45),0 13px 24px rgba(30,45,35,.19);
+}
+#gameScreen .zone-kicker{color:#315a68;font-size:10px}
+#gameScreen .zone-head h2{font-size:22px;margin:2px 0;color:#203d5a}
+#gameScreen .zone-rule{font-size:16px;line-height:1.28;color:#203d5a;font-weight:900}
+#gameScreen .zone-counter{
+  position:absolute;right:-2px;top:-1px;background:#fff4cf;border:2px solid #a97846;
+  color:#213f58;border-radius:13px;padding:7px 11px;box-shadow:0 5px 12px rgba(41,50,34,.16)
+}
+#gameScreen .board-wrap{position:relative}
+#gameScreen .cards{gap:13px;min-height:330px;align-content:center}
+#gameScreen .pair-card{
+  min-height:132px;border-radius:16px;
+  background:linear-gradient(180deg,#fffdf8,#f7efe2);
+  border:3px solid #aa805a;color:#152f51;
+  box-shadow:0 7px 0 rgba(111,74,43,.27),0 12px 20px rgba(31,43,35,.17);
+  font-size:clamp(18px,2vw,23px)
+}
+#gameScreen .pair-card:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 0 rgba(111,74,43,.25),0 15px 26px rgba(31,43,35,.21)}
+#gameScreen .pair-card.active{
+  border-color:#58be3e;box-shadow:0 0 0 5px rgba(102,229,67,.28),0 0 24px rgba(119,246,75,.55),0 7px 0 rgba(54,105,39,.3)
+}
+#gameScreen .pair-card.matched{
+  opacity:1;background:linear-gradient(180deg,#fffef8,#eefbe5);
+  border-color:#5dbe3f;box-shadow:0 0 0 4px rgba(105,236,68,.25),0 0 22px rgba(126,249,76,.45),0 7px 0 rgba(56,111,39,.26)
+}
+#gameScreen .pair-card.wrong{
+  border-color:#f04d2f;box-shadow:0 0 0 4px rgba(255,87,51,.22),0 0 20px rgba(255,77,45,.45),0 7px 0 rgba(136,58,39,.22)
+}
+#gameScreen .connector path{stroke:#79ef4e;stroke-width:8;filter:drop-shadow(0 0 7px rgba(126,255,86,.7))}
+#gameScreen .connector circle{stroke:#69cf48;fill:#fff9e4}
+#gameScreen .feedback-row{
+  position:absolute;right:-242px;top:74px;width:224px;display:block;z-index:8
+}
+#gameScreen .feedback-row .feedback{
+  margin:0;background:linear-gradient(180deg,#63bb4f,#3d963e);color:white;border:3px solid #edffdc;
+  border-radius:25px;padding:14px 15px;min-height:64px;
+  box-shadow:0 5px 0 #2e7834,0 12px 22px rgba(26,62,31,.24);font-size:14px
+}
+#gameScreen .feedback-row .feedback.hint{
+  background:linear-gradient(180deg,#fffdf6,#fff3e7);color:#c53c27;border-color:#ff7b55;
+  box-shadow:0 5px 0 #ba4936,0 12px 22px rgba(86,43,31,.20)
+}
+#gameScreen .feedback-row .feedback .face{display:none}
+#gameScreen .zone-characters{display:none!important}
+#gameScreen .homonym-grid{gap:14px}
+#gameScreen .h-word{
+  background:linear-gradient(180deg,#fff7d3,#ffe6a7);border-color:#a97846
+}
+#gameScreen .composite{background:linear-gradient(180deg,#fffefb,#f9f2e7)}
+#gameScreen .double-label{background:#315d78;color:white}
+#gameScreen .half{border:1px solid rgba(57,98,117,.12)}
+
+/* ZONE COMPLETE — parchment reward over the still-visible scene */
+.zone-complete{background:rgba(17,39,33,.34);backdrop-filter:blur(4px)}
+.zone-box{
+  background:linear-gradient(160deg,#fff3cf,#f4d38f);border:3px solid #a67745;border-radius:28px;
+  box-shadow:0 10px 0 rgba(101,68,38,.42),0 28px 70px rgba(18,40,31,.32)
+}
+.fragment-big{background:linear-gradient(145deg,#fff9da,#edd48e);border-color:#b98847}
+.zone-box .primary{background:linear-gradient(180deg,#62b94e,#358f43);border:2px solid #edffdc;box-shadow:0 5px 0 #266f36}
+
+/* FINAL — approved illustrated map scene */
+#finalScreen{
+  position:relative;overflow:hidden;min-height:760px;border-radius:34px;
+  background:
+    linear-gradient(180deg,rgba(10,39,26,.02),rgba(10,39,26,.08)),
+    url("assets/visual/scene-final.jpg") center/cover no-repeat;
+  box-shadow:0 24px 70px rgba(10,34,31,.35);border:2px solid rgba(255,244,206,.72)
+}
+#finalScreen .final-card{min-height:760px;padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}
+#finalScreen .final-top,#finalScreen .final-scene{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+#finalScreen .final-actions{
+  position:absolute;z-index:8;left:50%;bottom:27px;transform:translateX(-50%);
+  margin:0;gap:16px;white-space:nowrap
+}
+#finalScreen .final-actions .primary{
+  background:linear-gradient(180deg,#62ba4f,#348e42);border:3px solid #eaffd5;
+  box-shadow:0 5px 0 #286f38,0 13px 25px rgba(31,78,38,.25);min-width:190px
+}
+#finalScreen .final-actions .secondary{
+  background:linear-gradient(180deg,#fff5d3,#f2cf87);border:3px solid #a67845;color:#173954;
+  box-shadow:0 5px 0 #8a623d,0 13px 25px rgba(57,50,32,.18);min-width:180px
+}
+#finalScreen .teacher-facts{
+  position:absolute;left:18px;bottom:18px;margin:0;max-width:235px;z-index:9
+}
+#finalScreen .teacher-facts details{
+  background:rgba(255,247,219,.94);border:2px solid rgba(135,94,49,.45);box-shadow:0 10px 22px rgba(28,44,34,.18)
+}
+
+/* MOBILE: keep the world visible; compress controls instead of replacing scene with white canvas. */
+@media(max-width:900px){
+  #startScreen{min-height:700px;background-position:58% center}
+  #startScreen .hero{min-height:700px}
+  #startScreen .hero-card{left:16px;bottom:16px;width:min(460px,calc(100% - 32px))}
+  #gameScreen{min-height:820px;padding:18px 16px 190px}
+  #gameScreen .progress-strip{
+    position:relative;left:auto;top:auto;width:auto;margin:0 0 10px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:6px
+  }
+  #gameScreen .piece{min-height:49px;padding:6px}
+  #gameScreen .piece .n{width:27px;height:27px}
+  #gameScreen .piece span{display:none}
+  #gameScreen .zone-head{width:100%;margin-bottom:12px}
+  #gameScreen .zone-counter{position:static;display:inline-block;margin-top:7px}
+  #gameScreen::after{width:230px;height:205px;right:4px;bottom:0}
+  #gameScreen .feedback-row{position:relative;right:auto;top:auto;width:auto;margin-top:10px}
+  #gameScreen .feedback-row .feedback{max-width:calc(100% - 190px)}
+  #gameScreen .cards{grid-template-columns:repeat(2,minmax(0,1fr));min-height:0}
+  #gameScreen .pair-card{min-height:104px}
+  #finalScreen{min-height:720px;background-position:center}
+  #finalScreen .final-card{min-height:720px}
+  #finalScreen .final-actions{bottom:18px;gap:8px}
+  #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{min-width:0;padding:11px 14px}
+  #finalScreen .teacher-facts{left:12px;bottom:76px;max-width:220px}
+}
+@media(max-width:620px){
+  .header{padding:9px 10px 0}.brand{padding:6px 8px}.brand-badge{width:35px;height:35px}
+  .shell{padding:0 8px 24px}
+  #startScreen{min-height:650px;border-radius:24px;background-position:58% center}
+  #startScreen .hero{min-height:650px}
+  #startScreen .hero-card{left:10px;right:10px;bottom:10px;width:auto;padding:13px 14px;border-radius:19px}
+  #startScreen .hero h1{font-size:23px}
+  #startScreen .hero p{font-size:12px}
+  #startScreen .instruction{font-size:11px}
+  #gameScreen{min-height:760px;border-radius:24px;padding:12px 10px 165px}
+  #gameScreen .progress-strip{grid-template-columns:repeat(4,1fr)}
+  #gameScreen .piece b{font-size:8px}
+  #gameScreen .zone-head{padding:9px 10px;border-radius:14px}
+  #gameScreen .zone-head h2{font-size:18px}
+  #gameScreen .zone-rule{font-size:12px}
+  #gameScreen .cards{gap:8px}
+  #gameScreen .pair-card{min-height:88px;padding:9px;font-size:16px;border-radius:13px}
+  #gameScreen .feedback-row .feedback{max-width:calc(100% - 135px);font-size:11px;min-height:52px;padding:10px 11px}
+  #gameScreen::after{width:170px;height:150px}
+  #gameScreen .homonym-grid{grid-template-columns:1fr;gap:8px}
+  #gameScreen .word-stack{grid-template-columns:repeat(3,1fr);grid-template-rows:none}
+  #gameScreen .meaning-stack{grid-template-columns:1fr}
+  #gameScreen .h-word{min-height:68px}
+  #gameScreen .composite{min-height:105px}
+  #finalScreen{min-height:650px;border-radius:24px;background-position:54% center}
+  #finalScreen .final-card{min-height:650px}
+  #finalScreen .teacher-facts{bottom:70px;max-width:185px}
+  #finalScreen .teacher-facts summary{font-size:10px}
+}
+</style>
+
+
+<style id="g011-approved-visual-refinement">
+/* Refinement against the approved screens: keep the scene sharp and localize blur only under live gameplay UI. */
+#startScreen{
+  background-image:
+    linear-gradient(180deg,rgba(8,36,26,.00),rgba(8,36,26,.05)),
+    url("assets/visual/scene-start.jpg");
+}
+#gameScreen::before{
+  background-image:
+    linear-gradient(180deg,rgba(8,26,22,.01),rgba(8,31,22,.06)),
+    var(--scene-bg);
+}
+#gameScreen::after{display:none!important}
+#gameScreen .game-card{
+  padding:16px;
+  border-radius:26px;
+  background:rgba(38,53,41,.13);
+  border:1px solid rgba(255,245,211,.26);
+  box-shadow:0 18px 42px rgba(20,35,27,.13);
+  backdrop-filter:blur(11px) saturate(.92);
+  -webkit-backdrop-filter:blur(11px) saturate(.92);
+}
+#gameScreen .zone-head{
+  background:linear-gradient(180deg,rgba(255,246,213,.98),rgba(244,211,143,.97));
+}
+#gameScreen .pair-card{
+  background:linear-gradient(180deg,rgba(255,254,249,.98),rgba(248,240,226,.98));
+}
+#gameScreen .feedback-row{
+  right:-246px;
+}
+@media(max-width:900px){
+  #gameScreen .game-card{
+    padding:11px;background:rgba(31,48,38,.17);backdrop-filter:blur(9px) saturate(.94);
+    -webkit-backdrop-filter:blur(9px) saturate(.94)
+  }
+  #gameScreen .feedback-row{right:auto}
+}
+</style>
+
+
+<style id="g011-approved-visual-mask-refinement">
+@media(min-width:901px){
+  #gameScreen .game-card{
+    min-height:605px;
+    padding:16px 16px 98px;
+    background:rgba(28,45,36,.48);
+    backdrop-filter:blur(18px) saturate(.86);
+    -webkit-backdrop-filter:blur(18px) saturate(.86);
+  }
+  #gameScreen .feedback-row{
+    padding:7px;
+    border-radius:30px;
+    background:rgba(30,65,43,.76);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+}
+@media(max-width:900px){
+  #gameScreen .game-card{min-height:0}
+}
+</style>
+
+
+<style id="g011-final-scene-refinement">
+#finalScreen::before{
+  content:"";position:absolute;z-index:2;left:0;top:0;width:300px;height:68px;pointer-events:none;
+  background:
+    radial-gradient(circle at 16% 62%,#f6d36d 0 4px,transparent 5px),
+    radial-gradient(circle at 32% 34%,#f3a95d 0 5px,transparent 6px),
+    radial-gradient(circle at 53% 56%,#fff0a0 0 4px,transparent 5px),
+    linear-gradient(150deg,#4f9651 0%,#77b95f 56%,rgba(103,169,83,.0) 100%);
+  border-bottom-right-radius:64px;filter:saturate(1.08)
+}
+@media(min-width:901px){
+  #finalScreen .final-actions{
+    left:58px;right:auto;bottom:92px;transform:none;width:900px;
+    display:grid;grid-template-columns:1.08fr 1fr;gap:36px
+  }
+  #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{
+    min-height:82px;font-size:24px;border-radius:22px
+  }
+  #finalScreen .teacher-facts{bottom:18px}
+}
+.zone-box{color:#183855}
+.zone-box p{color:#40596c}
+.zone-box .zone-kicker{color:#4c7a64}
+</style>
+
+
+<style id="g011-scene-first-final-refinement">
+@media(min-width:901px){
+  #gameScreen .game-card{
+    background:rgba(25,48,37,.06)!important;
+    border-color:rgba(255,245,211,.12)!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+}
+#gameScreen .pair-card{background:linear-gradient(180deg,#fffdf5,#f7ecd9)!important}
+</style>
 </head>
 <body>
 <div class="app" id="app">
@@ -183,7 +540,7 @@ let currentCards=[];
 function setScreen(id){['startScreen','gameScreen','finalScreen'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo({top:0,left:0,behavior:'instant'})}
 function setFeedback(type,text,who='К'){$('feedback').className='feedback'+(type?' '+type:'');$('feedbackText').textContent=text;$('feedbackFace').textContent=who}
 function renderProgress(){$('progressStrip').innerHTML=ZONES.map((z,i)=>`<div class="piece ${state.completedZones.has(i)?'done':''} ${state.zoneIndex===i&&!state.completedZones.has(i)?'current':''}"><div class="n">${state.completedZones.has(i)?z.icon:(i+1)}</div><div><b>${esc(z.label)}</b><br><span>${state.completedZones.has(i)?'часть карты открыта':`часть ${i+1}/4`}</span></div></div>`).join('')}
-function applyZoneTheme(z){document.documentElement.style.setProperty('--zone',z.color);document.documentElement.style.setProperty('--zoneSoft',z.soft);document.documentElement.style.setProperty('--zoneGlow',z.color+'26')}
+function applyZoneTheme(z){document.documentElement.style.setProperty('--zone',z.color);document.documentElement.style.setProperty('--zoneSoft',z.soft);document.documentElement.style.setProperty('--zoneGlow',z.color+'26');const visual={syn:['scene-synonyms-bg.jpg','cats-synonyms.png'],ant:['scene-antonyms-bg.jpg','cats-antonyms.png'],hom:['scene-homonyms-bg.jpg','cats-homonyms.png'],phr:['scene-idioms-bg.jpg','cats-idioms.png']}[z.id];if(visual){document.documentElement.style.setProperty('--scene-bg',`url("assets/visual/${visual[0]}")`);document.documentElement.style.setProperty('--scene-cats',`url("assets/visual/${visual[1]}")`)}}
 function initZoneStats(){ZONES.forEach(z=>state.zoneStats[z.id]={resolvedTasks:0,firstTryCorrect:0,eventualCorrect:0,wrongAttempts:0,corrections:0})}
 function startGame(seed=randSeed()){
  if(!ACTIVE_BANK)return false;bumpRunEpoch();$('zoneComplete').classList.add('hidden');state.runSeed=seed>>>0;ZONES=buildRunZones(state.runSeed);state.zoneIndex=0;state.zoneMatched=new Set();state.selected=null;state.locked=false;state.completedZones=new Set();state.attempts=0;state.resolvedTasks=0;state.firstTryCorrect=0;state.eventualCorrect=0;state.wrongAttempts=0;state.corrections=0;state.pairHadWrong={};state.sessionId=uid();state.startedAt=new Date().toISOString();state.completedAt=null;state.lastResult=null;state.studentCode=isTestMode()?null:loadActiveStudentCode();state.zoneStats={};initZoneStats();$('app').classList.remove('world-lit');setScreen('gameScreen');renderZone();return getRunInfo()
