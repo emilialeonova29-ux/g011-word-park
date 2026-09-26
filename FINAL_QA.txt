@@ -1,0 +1,36 @@
+G-011 FINAL QA — SYSTEM VISUAL FIX
+
+Identity:
+GAME-ID: G-011
+gameVersion: 1.0.0
+BANK-ID: BANK-01
+bankVersion: v1
+
+VISUAL QA PASSED
+- Start screen unchanged from visual lock.
+- Gameplay scenic layer contains environment/cats only; no baked runtime UI.
+- Dynamic zone name, instruction, cards, progress, feedback, zone-complete text/buttons and final results/actions are DOM-only.
+- No duplicate gameplay/final UI layers.
+- Progress checked through 1/4 -> 2/4 -> 3/4 -> 4/4.
+- Zone names checked: Синонимы -> Антонимы -> Омонимы -> Фразеологизмы.
+- Wrong/correct states checked.
+- Homonym connector endpoints attach to outer card edges and do not cross composite-card content.
+- Zone complete checked at 1/4, 2/4, 3/4, 4/4.
+- Final screen checked with one set of live actions.
+- Desktop 1280x850 passed.
+- Mobile 390x844 passed.
+- Mobile 320x568 passed.
+- Horizontal overflow = 0 at all tested viewports.
+
+TECH QA PASSED
+- runtime/page errors = 0
+- console errors = 0
+- BANK validation = 3+3+3+3, 12 pairs
+- TEST perfect run = 12/12
+- TEST rewards = [] / collectionItemsUnlocked = [] / xpEarned = 0
+- student perfect run = 12/12 and word-park-map reward
+- replay starts fresh sessionId and fresh seed
+- timer invalidation markers preserved: runEpoch / bumpRunEpoch / runLater / token-guard / clearSessionState epoch bump
+
+UNCHANGED
+CONTENT / BANK / mechanics / loader / normalized result contract / storage+replay / timer hotfix.

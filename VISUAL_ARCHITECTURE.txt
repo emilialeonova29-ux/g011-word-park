@@ -1,0 +1,6 @@
+G-011 VISUAL ARCHITECTURE LOCK
+
+scenic layer = environment / decoration / cats only
+runtime DOM = zone name / instruction / cards / progress / feedback / zone-complete / buttons / final results/actions
+
+The visual implementation intentionally contains no baked gameplay/final runtime UI assets. This prevents stale 1/4/zone labels, duplicate feedback/buttons, and zone mismatch regressions.

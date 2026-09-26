@@ -1,0 +1,27 @@
+G-011 — Кнопка и Василий в Парке слов
+FINAL PRODUCTION PACKAGE — SYSTEM VISUAL FIX
+
+GAME-ID: G-011
+gameVersion: 1.0.0
+BANK-ID: BANK-01
+bankVersion: v1
+
+Runtime files:
+- index.html
+- banks/manifest.js
+- banks/BANK-01.v1.js
+- assets/homonyms/*.svg
+- assets/characters/knopka-vasiliy-approved.png
+- assets/characters/knopka-vasiliy-scene.png
+- assets/visual-preview/start-approved.png  (start screen only, visual-locked)
+
+Review mirrors:
+- banks/manifest.json
+- banks/BANK-01.v1.json
+
+Visual architecture:
+- start screen remains approved visual lock;
+- gameplay/final environment contains no baked runtime text, cards, progress, feedback or action buttons;
+- all changing state is DOM-only.
+
+Publish the entire directory preserving relative paths.
