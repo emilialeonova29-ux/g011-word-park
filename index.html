@@ -139,7 +139,7 @@ html,body{background:#153d32!important}
 #startScreen #startBtn{min-width:320px!important;font-size:19px!important}
 
 #gameScreen{width:100vw!important;height:100vh!important;aspect-ratio:auto!important;display:block!important;background:#234e3d!important}
-#gameScreen::before{content:"";position:absolute;inset:-18px;background:url("assets/visual-preview/syn-approved.png") center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.88);transform:scale(1.04);z-index:0}
+#gameScreen::before{content:"";position:absolute;inset:-18px;background:linear-gradient(transparent,transparent) center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.88);transform:scale(1.04);z-index:0}
 .approved-zone-scene{position:absolute!important;z-index:1!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
 #gameScreen .game-card{z-index:4!important}
 #gameScreen .feedback-row{left:123%!important;top:-18%!important;width:44%!important}
@@ -158,10 +158,10 @@ html,body{background:#153d32!important}
 <style id="real-html-spread-visual">
 /* Approved implementation spread: scene remains a single preserved composition; live UI occupies the approved interaction zone. */
 .approved-zone-scene,.approved-final-scene,.approved-zone-complete-scene{pointer-events:none;user-select:none}
-#gameScreen::before{background-image:var(--scene-fill,url("assets/visual-preview/syn-approved.png"))!important}
-#gameScreen[data-zone="ant"]::before{background-image:url("assets/visual-preview/ant-approved.png")!important}
-#gameScreen[data-zone="hom"]::before{background-image:url("assets/visual-preview/hom-approved.png")!important}
-#gameScreen[data-zone="phr"]::before{background-image:url("assets/visual-preview/phr-approved.png")!important}
+#gameScreen::before{background-image:var(--scene-fill,linear-gradient(transparent,transparent))!important}
+#gameScreen[data-zone="ant"]::before{background-image:linear-gradient(transparent,transparent)!important}
+#gameScreen[data-zone="hom"]::before{background-image:linear-gradient(transparent,transparent)!important}
+#gameScreen[data-zone="phr"]::before{background-image:linear-gradient(transparent,transparent)!important}
 #gameScreen[data-zone="hom"] .game-card{left:20.1%!important;top:39.5%!important;width:47.5%!important;height:42.8%!important}
 #gameScreen[data-zone="hom"] .board-wrap::before{left:-1.5%!important;right:-1.5%!important;top:-4%!important;bottom:-3%!important;background:rgba(42,66,76,.25)!important;backdrop-filter:blur(14px) saturate(.88) brightness(.9)!important;-webkit-backdrop-filter:blur(14px) saturate(.88) brightness(.9)!important}
 #gameScreen[data-zone="hom"] .homonym-grid{height:100%!important;display:grid!important;grid-template-columns:29% 71%!important;gap:3%!important}
@@ -179,7 +179,7 @@ html,body{background:#153d32!important}
 
 /* Zone complete is its own scenic state, not a white modal over an abstract canvas. */
 .zone-complete{padding:0!important;background:#234e3d!important;backdrop-filter:none!important;overflow:hidden!important}
-.zone-complete::before{content:"";position:absolute;inset:-18px;background:url("assets/visual-preview/zone-complete-approved.png") center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.9);transform:scale(1.04);z-index:0}
+.zone-complete::before{content:"";position:absolute;inset:-18px;background:linear-gradient(transparent,transparent) center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.9);transform:scale(1.04);z-index:0}
 .approved-zone-complete-scene{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
 .zone-box{position:absolute!important;z-index:4;left:13.5%!important;top:22%!important;transform:none!important;width:31%!important;min-width:390px!important;max-width:500px!important;padding:28px 25px 24px!important;border-radius:28px!important;background:linear-gradient(160deg,rgba(255,246,215,.98),rgba(246,218,158,.98))!important;border:3px solid #aa7a48!important;box-shadow:0 9px 0 rgba(112,75,42,.35),0 20px 45px rgba(25,45,31,.24)!important}
 .zone-box .fragment-big{width:135px!important;height:96px!important;margin-bottom:10px!important;background:linear-gradient(145deg,#fff5c8,#ead892)!important;border-color:#bd8f4c!important;font-size:40px!important}
@@ -187,7 +187,7 @@ html,body{background:#153d32!important}
 
 /* Final: the approved map composition is preserved with live replay/finish controls aligned over it. */
 #finalScreen{position:relative!important;width:100vw!important;height:100vh!important;overflow:hidden!important;background:#315b3f!important}
-#finalScreen::before{content:"";position:absolute;inset:-18px;background:url("assets/visual-preview/final-approved.png") center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.9);transform:scale(1.04);z-index:0}
+#finalScreen::before{content:"";position:absolute;inset:-18px;background:linear-gradient(transparent,transparent) center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.9);transform:scale(1.04);z-index:0}
 .approved-final-scene{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
 #finalScreen .final-card{position:absolute!important;z-index:4;inset:0!important;min-height:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
 #finalScreen .final-top,#finalScreen .final-scene{display:none!important}
@@ -318,7 +318,7 @@ html,body{background:#153d32!important}
 
   /* Zone complete: one readable live reward card; the approved scene stays atmospheric, not a duplicate UI. */
   .zone-complete{min-height:100vh!important;display:grid!important;place-items:center!important;padding:16px!important;background:#214b3b!important}
-  .zone-complete::before{content:""!important;display:block!important;position:absolute!important;inset:0!important;background:url("assets/visual-preview/zone-complete-approved.png") center/cover no-repeat!important;filter:blur(12px) brightness(.58) saturate(.88)!important;transform:scale(1.03)!important;z-index:0!important}
+  .zone-complete::before{content:""!important;display:block!important;position:absolute!important;inset:0!important;background:linear-gradient(transparent,transparent) center/cover no-repeat!important;filter:blur(12px) brightness(.58) saturate(.88)!important;transform:scale(1.03)!important;z-index:0!important}
   .approved-zone-complete-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;opacity:.24!important;filter:blur(1.5px)!important;z-index:1!important}
   .zone-box{position:relative!important;z-index:4!important;left:auto!important;top:auto!important;width:min(94vw,430px)!important;min-width:0!important;max-width:430px!important;min-height:0!important;margin:0!important;padding:22px 18px 86px!important}
   .zone-box #nextZoneBtn{position:absolute!important;left:50%!important;bottom:16px!important;transform:translateX(-50%)!important;width:min(300px,84%)!important;height:56px!important}
@@ -338,6 +338,126 @@ html,body{background:#153d32!important}
 <style id="visual-lock-hidden-guard">
 .zone-complete.hidden{display:none!important}
 </style>
+
+<style id="g011-system-visual-architecture-fix">
+/* SYSTEM FIX: start screen stays visually locked.
+   All other scenic layers contain environment/cats only; all changing state is DOM. */
+
+/* Gameplay scenic world: environment only, no baked text/cards/progress/feedback. */
+#gameScreen{
+  --sceneA:#315f59;--sceneB:#6a5138;--sceneC:#a67648;
+  position:relative!important;overflow:hidden!important;isolation:isolate!important;
+  min-height:760px!important;height:auto!important;aspect-ratio:auto!important;
+  padding:22px 255px 28px 155px!important;border-radius:30px!important;
+  background:
+    radial-gradient(circle at 87% 16%,rgba(255,238,158,.30) 0 4%,transparent 17%),
+    radial-gradient(circle at 8% 79%,rgba(48,126,66,.34) 0 12%,transparent 34%),
+    linear-gradient(180deg,var(--sceneA) 0 30%,var(--sceneB) 30% 72%,var(--sceneC) 72% 100%)!important;
+  box-shadow:0 24px 65px rgba(11,34,29,.32)!important;
+}
+#gameScreen[data-zone="syn"]{--sceneA:#356d64;--sceneB:#6d5235;--sceneC:#a77749}
+#gameScreen[data-zone="ant"]{--sceneA:#554c73;--sceneB:#67483f;--sceneC:#99654f}
+#gameScreen[data-zone="hom"]{--sceneA:#315e79;--sceneB:#42666b;--sceneC:#718c79}
+#gameScreen[data-zone="phr"]{--sceneA:#654a42;--sceneB:#73503d;--sceneC:#a26b46}
+
+/* Decorative architecture only: shelves, lantern glow, ivy/window. No semantic text. */
+#gameScreen::before{
+  content:""!important;display:block!important;position:absolute!important;z-index:0!important;inset:0!important;
+  background:
+    radial-gradient(circle at 20% 17%,rgba(255,222,119,.80) 0 1.1%,rgba(255,203,86,.18) 1.3% 7%,transparent 14%),
+    radial-gradient(circle at 76% 17%,rgba(255,224,126,.68) 0 1.1%,rgba(255,202,83,.17) 1.3% 7%,transparent 14%),
+    radial-gradient(ellipse at 91% 26%,rgba(199,237,255,.66) 0 9%,rgba(150,211,231,.12) 10% 20%,transparent 21%),
+    repeating-linear-gradient(90deg,transparent 0 8%,rgba(53,35,25,.30) 8% 9%,transparent 9% 18%),
+    repeating-linear-gradient(180deg,transparent 0 13%,rgba(49,31,22,.30) 13% 14%,transparent 14% 27%),
+    radial-gradient(circle at 4% 8%,rgba(37,116,59,.62) 0 4%,transparent 4.4%),
+    radial-gradient(circle at 10% 3%,rgba(49,139,72,.56) 0 5%,transparent 5.4%),
+    radial-gradient(circle at 95% 8%,rgba(43,128,67,.58) 0 5%,transparent 5.4%);
+  opacity:.88!important;pointer-events:none!important
+}
+/* Approved cats are part of the scene and never carry runtime state. */
+#gameScreen::after{
+  content:""!important;display:block!important;position:absolute!important;z-index:2!important;
+  right:5px!important;bottom:-2px!important;width:310px!important;height:300px!important;
+  background:url("assets/characters/knopka-vasiliy-scene.png") right bottom/contain no-repeat!important;
+  filter:drop-shadow(0 12px 20px rgba(22,38,27,.22))!important;pointer-events:none!important
+}
+.approved-zone-scene{display:none!important}
+
+/* Runtime progress only. */
+#gameScreen .progress-strip{
+  display:flex!important;position:absolute!important;z-index:7!important;left:16px!important;top:100px!important;
+  width:126px!important;flex-direction:column!important;gap:8px!important;margin:0!important
+}
+#gameScreen .piece{min-height:58px!important;padding:7px 8px!important;border-radius:15px!important;background:linear-gradient(155deg,rgba(43,91,112,.96),rgba(30,64,82,.96))!important;color:#fff!important;border:2px solid rgba(243,213,135,.42)!important;box-shadow:0 8px 18px rgba(16,34,30,.24)!important}
+#gameScreen .piece .n{background:#f4cc6a!important;color:#274b58!important}
+#gameScreen .piece b{color:#fff!important;font-size:11px!important}#gameScreen .piece span{color:#e7f2ed!important;font-size:9px!important}
+#gameScreen .piece.done{background:linear-gradient(155deg,#3e8b60,#2d6d51)!important;border-color:#f6da79!important}
+#gameScreen .piece.current{outline:3px solid rgba(251,222,119,.75)!important;background:linear-gradient(155deg,#44799a,#2f5973)!important}
+
+/* No legacy white UI slab. */
+#gameScreen .game-card{position:relative!important;z-index:4!important;left:auto!important;right:auto!important;top:auto!important;width:auto!important;height:auto!important;min-height:700px!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
+#gameScreen .game-card::before{display:none!important}
+#gameScreen .game-card::after{content:""!important;position:absolute!important;z-index:-1!important;left:-110px!important;right:-110px!important;top:70px!important;bottom:25px!important;border-radius:32px!important;pointer-events:none!important;background:repeating-linear-gradient(90deg,rgba(176,93,72,.20) 0 18px,rgba(77,111,89,.18) 18px 35px,rgba(203,151,71,.15) 35px 52px,rgba(98,73,113,.15) 52px 69px)!important;mask:repeating-linear-gradient(180deg,#000 0 22px,transparent 22px 76px);-webkit-mask:repeating-linear-gradient(180deg,#000 0 22px,transparent 22px 76px);opacity:.45!important}
+
+/* Runtime zone title/instruction. */
+#gameScreen .zone-head{display:block!important;position:relative!important;width:min(720px,100%)!important;margin:0 auto 18px!important;padding:10px 18px 12px!important;text-align:center!important;border:3px solid #a97945!important;border-radius:18px!important;background:linear-gradient(180deg,rgba(255,247,218,.98),rgba(245,212,146,.98))!important;box-shadow:0 6px 0 rgba(112,74,40,.42),0 14px 28px rgba(29,47,37,.18)!important}
+#gameScreen .zone-kicker{color:#426d68!important;font-size:10px!important}#gameScreen .zone-head h2{font-size:22px!important;color:#173b57!important;margin:2px 0!important}#gameScreen .zone-rule{font-size:16px!important;color:#183952!important;font-weight:900!important;line-height:1.25!important}
+#gameScreen .zone-counter{display:block!important;position:absolute!important;right:2px!important;top:2px!important;border:2px solid #a97945!important;border-radius:12px!important;background:#fff3ca!important;color:#173952!important;padding:6px 10px!important;box-shadow:0 5px 12px rgba(40,46,32,.15)!important}
+
+/* Board contains only live cards. */
+#gameScreen .board-wrap{position:relative!important;z-index:5!important;width:min(760px,100%)!important;margin:0 auto!important;padding:15px!important;border-radius:24px!important;background:rgba(36,45,34,.16)!important;border:1px solid rgba(255,246,210,.24)!important;backdrop-filter:blur(7px) saturate(.95)!important;-webkit-backdrop-filter:blur(7px) saturate(.95)!important}
+#gameScreen .board-wrap::before{display:none!important}
+#gameScreen .cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:13px!important;min-height:330px!important;align-content:center!important}
+#gameScreen .pair-card{min-height:128px!important;padding:12px!important;border-radius:16px!important;background:linear-gradient(180deg,#fffef9,#f7eee0)!important;border:3px solid #ab8058!important;color:#17314f!important;box-shadow:0 7px 0 rgba(112,76,45,.26),0 13px 22px rgba(29,42,34,.16)!important;font-size:clamp(17px,2vw,22px)!important}
+#gameScreen .pair-card.active{border-color:#61c445!important;box-shadow:0 0 0 5px rgba(106,229,72,.26),0 0 24px rgba(117,245,79,.50),0 7px 0 rgba(57,109,42,.28)!important}
+#gameScreen .pair-card.matched{opacity:1!important;background:linear-gradient(180deg,#fffef9,#effbe7)!important;border-color:#5dbc42!important;box-shadow:0 0 0 4px rgba(104,229,73,.24),0 0 21px rgba(119,243,82,.42),0 7px 0 rgba(57,108,41,.25)!important}
+#gameScreen .pair-card.wrong{border-color:#ef4d32!important;box-shadow:0 0 0 4px rgba(255,87,52,.20),0 0 20px rgba(255,75,44,.43),0 7px 0 rgba(133,58,40,.22)!important}
+
+/* Runtime connectors only; no baked lines. */
+#gameScreen .connector{z-index:8!important;pointer-events:none!important}#gameScreen .connector path{stroke:#75e950!important;stroke-width:6!important;filter:drop-shadow(0 0 6px rgba(112,246,75,.68))!important}#gameScreen .connector circle{fill:#fff9e9!important;stroke:#66cd48!important;stroke-width:5!important}
+
+/* Feedback is runtime-only and stays outside the board. */
+#gameScreen .feedback-row{display:block!important;position:absolute!important;z-index:9!important;right:-230px!important;top:100px!important;width:210px!important;margin:0!important}
+#gameScreen .feedback-row .feedback{min-height:62px!important;margin:0!important;padding:13px 14px!important;border-radius:24px!important;color:#fff!important;background:linear-gradient(180deg,#61b94d,#3b953d)!important;border:3px solid #efffdf!important;box-shadow:0 5px 0 #2e7834,0 12px 23px rgba(25,62,31,.24)!important;font-size:13px!important;line-height:1.25!important}
+#gameScreen .feedback-row .feedback.hint{color:#c73f2a!important;background:linear-gradient(180deg,#fffef8,#fff0e4)!important;border-color:#ff7b55!important;box-shadow:0 5px 0 #ba4936,0 12px 22px rgba(86,43,31,.20)!important}#gameScreen .feedback-row .face{display:none!important}#gameScreen .zone-characters{display:none!important}
+
+/* Homonym architecture remains one CompositeMeaningCard. */
+#gameScreen .homonym-grid{display:grid!important;grid-template-columns:minmax(150px,.85fr) minmax(0,1.6fr)!important;gap:14px!important}#gameScreen .word-stack{display:grid!important;grid-template-rows:repeat(3,1fr)!important;gap:10px!important}#gameScreen .meaning-stack{display:grid!important;grid-template-rows:repeat(3,1fr)!important;gap:10px!important}#gameScreen .h-word,#gameScreen .composite{min-height:106px!important}#gameScreen .double-label{background:#315e78!important;color:#fff!important}
+
+/* Zone complete: current live game scene remains behind exactly one DOM reward card. */
+.approved-zone-complete-scene{display:none!important}.zone-complete{position:fixed!important;inset:0!important;z-index:50!important;background:rgba(14,33,28,.44)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;display:grid!important;place-items:center!important;padding:18px!important}.zone-complete.hidden{display:none!important}.zone-complete::before{display:none!important}.zone-box{position:relative!important;z-index:2!important;width:min(500px,92vw)!important;padding:28px 28px 24px!important;border-radius:28px!important;text-align:center!important;background:linear-gradient(160deg,#fff3cd,#f3d08a)!important;border:3px solid #a47745!important;box-shadow:0 9px 0 rgba(101,68,38,.42),0 30px 70px rgba(18,40,31,.35)!important}
+
+/* Final scene: atmosphere is CSS; all title/map labels/results/actions are DOM. */
+#finalScreen{position:relative!important;min-height:760px!important;height:auto!important;overflow:hidden!important;padding:26px!important;border-radius:30px!important;background:radial-gradient(circle at 14% 17%,rgba(255,236,136,.54) 0 2%,transparent 10%),radial-gradient(circle at 83% 13%,rgba(255,238,146,.48) 0 2%,transparent 11%),radial-gradient(ellipse at 50% 95%,rgba(116,181,94,.82) 0 36%,transparent 37%),linear-gradient(180deg,#bfeeff 0 47%,#91cf7f 47% 100%)!important;box-shadow:0 24px 65px rgba(11,34,29,.32)!important}
+#finalScreen::before{content:""!important;display:block!important;position:absolute!important;z-index:0!important;inset:0!important;background:radial-gradient(circle at 5% 68%,rgba(55,133,68,.72) 0 7%,transparent 7.5%),radial-gradient(circle at 12% 64%,rgba(75,154,76,.62) 0 9%,transparent 9.5%),radial-gradient(circle at 94% 68%,rgba(55,133,68,.72) 0 7%,transparent 7.5%),radial-gradient(circle at 87% 64%,rgba(75,154,76,.62) 0 9%,transparent 9.5%)!important;pointer-events:none!important}.approved-final-scene{display:none!important}
+#finalScreen .final-card{position:relative!important;z-index:3!important;min-height:700px!important;height:auto!important;padding:28px!important;border:0!important;border-radius:28px!important;background:rgba(255,248,220,.88)!important;box-shadow:0 20px 55px rgba(23,47,35,.24)!important;backdrop-filter:blur(9px)!important;-webkit-backdrop-filter:blur(9px)!important;pointer-events:auto!important}
+#finalScreen .final-top{position:relative!important;width:auto!important;height:auto!important;overflow:visible!important;clip:auto!important;clip-path:none!important;white-space:normal!important;text-align:center!important}.final-top h1{font-size:clamp(31px,4vw,48px)!important;color:#163b57!important}.final-top p{font-size:18px!important;color:#4c6370!important}
+#finalScreen .final-scene{position:relative!important;display:block!important;width:min(820px,100%)!important;min-height:340px!important;margin:20px auto 0!important;overflow:hidden!important;border-radius:25px!important;background:radial-gradient(circle at 20% 26%,#8fd078 0 9%,transparent 10%),radial-gradient(circle at 76% 25%,#7ec46d 0 11%,transparent 12%),radial-gradient(circle at 30% 74%,#66b969 0 13%,transparent 14%),radial-gradient(circle at 70% 72%,#5dad65 0 13%,transparent 14%),linear-gradient(180deg,#d8f4ff 0 44%,#a6d991 44% 100%)!important;border:2px solid rgba(144,188,159,.65)!important}
+#finalScreen .final-map{display:grid!important}#finalScreen .final-gate{display:block!important}#finalScreen .final-characters{display:flex!important}#finalScreen .approved-final-characters img{display:block!important;content:normal!important;max-width:100%!important}
+#finalScreen .final-actions{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:auto!important;display:flex!important;justify-content:center!important;gap:14px!important;margin:18px 0 0!important;pointer-events:auto!important}#finalScreen .teacher-facts{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;max-width:760px!important;margin:14px auto 0!important;pointer-events:auto!important}
+
+/* Mobile keeps semantic DOM readable; no screenshot crop exists. */
+@media(max-width:1050px){#gameScreen{padding:18px 205px 26px 135px!important}#gameScreen::after{width:240px!important;height:240px!important}#gameScreen .feedback-row{right:-185px!important;width:170px!important}#gameScreen .progress-strip{left:12px!important;width:112px!important}}
+@media(max-width:700px){.shell{padding-left:8px!important;padding-right:8px!important}#gameScreen{min-height:820px!important;padding:10px 9px 155px!important;border-radius:22px!important}#gameScreen::after{width:165px!important;height:148px!important;right:2px!important;bottom:0!important}#gameScreen .game-card{min-height:0!important}#gameScreen .game-card::after{left:-30px!important;right:-30px!important;opacity:.28!important}#gameScreen .progress-strip{position:relative!important;left:auto!important;top:auto!important;width:auto!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;margin:0 0 9px!important}#gameScreen .piece{min-height:46px!important;padding:5px!important}#gameScreen .piece .n{width:25px!important;height:25px!important}#gameScreen .piece b{font-size:8px!important}#gameScreen .piece span{display:none!important}#gameScreen .zone-head{width:100%!important;margin-bottom:10px!important;padding:8px 10px 10px!important}#gameScreen .zone-head h2{font-size:18px!important}#gameScreen .zone-rule{font-size:12px!important}#gameScreen .zone-counter{position:static!important;display:inline-block!important;margin-top:6px!important}#gameScreen .board-wrap{width:100%!important;padding:9px!important;border-radius:18px!important}#gameScreen .cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;min-height:0!important}#gameScreen .pair-card{min-height:88px!important;padding:8px!important;font-size:15px!important;border-radius:12px!important}#gameScreen .feedback-row{position:relative!important;right:auto!important;top:auto!important;width:auto!important;margin-top:9px!important}#gameScreen .feedback-row .feedback{max-width:calc(100% - 145px)!important;min-height:48px!important;font-size:11px!important;padding:9px 10px!important}#gameScreen .homonym-grid{grid-template-columns:1fr!important;gap:8px!important}#gameScreen .word-stack{grid-template-columns:repeat(3,1fr)!important;grid-template-rows:none!important}#gameScreen .meaning-stack{grid-template-columns:1fr!important;grid-template-rows:none!important}#gameScreen .h-word{min-height:62px!important}#gameScreen .composite{min-height:102px!important}#finalScreen{min-height:700px!important;padding:9px!important;border-radius:22px!important}#finalScreen .final-card{min-height:670px!important;padding:15px!important;border-radius:20px!important}#finalScreen .final-top h1{font-size:27px!important}#finalScreen .final-top p{font-size:14px!important}#finalScreen .final-scene{min-height:300px!important}#finalScreen .final-actions{gap:7px!important;flex-wrap:wrap!important}#finalScreen .final-actions button{font-size:13px!important;padding:10px 12px!important}.zone-box{width:min(430px,94vw)!important;padding:22px 18px!important}}
+@media(max-width:360px){#gameScreen{padding-bottom:145px!important}#gameScreen::after{width:145px!important;height:130px!important}#gameScreen .feedback-row .feedback{max-width:calc(100% - 120px)!important;font-size:10px!important}#gameScreen .pair-card{min-height:82px!important;font-size:14px!important}#finalScreen .final-top h1{font-size:23px!important}}
+</style>
+
+
+<style id="g011-system-final-visibility-fix">
+#finalScreen .final-top{display:block!important}
+#finalScreen .final-scene{display:block!important}
+#finalScreen .final-map{display:grid!important}
+#finalScreen .final-gate{display:block!important}
+#finalScreen .final-characters{display:flex!important}
+</style>
+
+
+<style id="g011-testbar-mobile-flow">
+@media(max-width:620px){
+  .testbar{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;margin:8px 10px 12px!important;max-width:none!important;flex-wrap:wrap!important;justify-content:center!important}
+}
+</style>
+
 </head>
 <body>
 <div class="app" id="app">
@@ -372,7 +492,7 @@ html,body{background:#153d32!important}
       </div>
     </section>
 
-    <section class="panel hidden" id="gameScreen"><img class="approved-zone-scene" id="approvedZoneScene" src="assets/visual-preview/syn-approved.png" alt="Игровая зона Парка слов" aria-hidden="true">
+    <section class="panel hidden" id="gameScreen">
       <div class="progress-strip" id="progressStrip"></div>
       <div class="game-card" id="gameCard">
         <div class="zone-head">
@@ -384,7 +504,7 @@ html,body{background:#153d32!important}
       </div>
     </section>
 
-    <section class="panel hidden" id="finalScreen"><img class="approved-final-scene" src="assets/visual-preview/final-approved.png" alt="Карта Парка слов собрана" aria-hidden="true">
+    <section class="panel hidden" id="finalScreen">
       <div class="final-card">
         <div class="final-top"><div class="eyebrow">Карта собрана</div><h1>Все 4 части карты собраны. Парк слов открыт!</h1><p>Ты нашёл 12 смысловых пар.</p></div>
         <div class="final-scene">
@@ -393,7 +513,7 @@ html,body{background:#153d32!important}
             <div class="tile"><span>☀</span><small>Синонимы</small></div><div class="tile"><span>↔</span><small>Антонимы</small></div><div class="tile"><span>◌</span><small>Омонимы</small></div><div class="tile"><span>★</span><small>Фразеологизмы</small></div>
           </div>
           <div class="final-gate"><div class="arch"></div><div class="sign">ПАРК СЛОВ</div><div class="doors"><div class="door"></div><div class="door"></div></div></div>
-          <div class="final-characters approved-final-characters"><img src="assets/characters/knopka-vasiliy-approved.png" alt="Василий и Кнопка у открытого Парка слов" /></div>
+          <div class="final-characters approved-final-characters"><img src="assets/characters/knopka-vasiliy-scene.png" alt="Василий и Кнопка у открытого Парка слов" /></div>
         </div>
         <div class="final-actions"><button class="primary" id="replayBtn" type="button">Пройти ещё раз</button><button class="secondary" id="finishBtn" type="button">Завершить</button></div>
         <div class="teacher-facts"><details><summary>Результат прохождения</summary><div class="facts-grid"><div class="fact"><b id="factFirst">0/12</b><span>с первой попытки</span></div><div class="fact"><b id="factFix">0</b><span>исправлено</span></div><div class="fact"><b id="factWrong">0</b><span>ошибочных попыток</span></div><div class="fact"><b>12/12</b><span>пар найдено</span></div></div><div class="passport" id="passport"></div></details></div>
@@ -402,7 +522,7 @@ html,body{background:#153d32!important}
   </main>
 </div>
 
-<div class="zone-complete hidden" id="zoneComplete"><img class="approved-zone-complete-scene" src="assets/visual-preview/zone-complete-approved.png" alt="Завершение зоны" aria-hidden="true"><div class="zone-box"><div class="fragment-big" id="fragmentIcon">☀</div><div class="zone-kicker">Часть карты найдена</div><h3 id="zoneDoneTitle">Фрагмент карты 1/4 найден.</h3><p id="zoneDoneText">Дорожка на карте стала видна.</p><button class="primary" id="nextZoneBtn" type="button">В следующую зону</button></div></div>
+<div class="zone-complete hidden" id="zoneComplete"><div class="zone-box"><div class="fragment-big" id="fragmentIcon">☀</div><div class="zone-kicker">Часть карты найдена</div><h3 id="zoneDoneTitle">Фрагмент карты 1/4 найден.</h3><p id="zoneDoneText">Дорожка на карте стала видна.</p><button class="primary" id="nextZoneBtn" type="button">В следующую зону</button></div></div>
 
 <div class="about-modal hidden" id="aboutModal"><div class="about"><button class="ghost about-close" id="aboutClose" type="button">Закрыть</button><h2>Об игре</h2><p><strong>Автор и методический разработчик — Эмилия Леонова.</strong><br>«Кнопка и Василий в Парке слов» — игра на поиск смысловых пар для 4 класса.</p><dl><dt>GAME-ID</dt><dd>G-011</dd><dt>Версия</dt><dd>1.0.0</dd><dt>Режим</dt><dd>word-park-pairs</dd><dt>Банк</dt><dd id="aboutBank">загрузка…</dd><dt>Год</dt><dd>2026</dd><dt>Авторское право</dt><dd>© 2026 Эмилия Леонова</dd></dl></div></div>
 <div class="testbar hidden" id="testbar"><span>ТЕСТОВЫЙ РЕЖИМ — результаты не сохраняются</span><button id="qaPerfect" type="button">Автопрохождение</button><button id="qaReset" type="button">Сброс</button><button id="exitTest" type="button">Выйти из TEST</button></div>
@@ -468,7 +588,107 @@ function markWrong(anchorPair){state.attempts++;state.wrongAttempts++;state.pair
 function resolvePair(pairId,a,b){state.attempts++;state.resolvedTasks++;state.eventualCorrect++;const zs=state.zoneStats[ZONES[state.zoneIndex].id];zs.resolvedTasks++;zs.eventualCorrect++;if(!state.pairHadWrong[pairId]){state.firstTryCorrect++;zs.firstTryCorrect++}else{state.corrections++;zs.corrections++}state.zoneMatched.add(pairId);a.classList.add('matched');b.classList.add('matched');a.disabled=true;b.disabled=true;a.classList.remove('active');b.classList.remove('active');state.selected=null;drawConnection(a,b);$('zoneCounter').textContent=`Найдено ${state.zoneMatched.size} из 3`;setFeedback('success','Пара найдена!',state.zoneIndex%2===0?'В':'К');if(state.zoneMatched.size===PAIRS_PER_ZONE){const token=state.runEpoch;runLater(completeZone,650,token)}}
 function genericClick(card){if(state.locked||card.disabled)return;if(!state.selected){state.selected=card;card.classList.add('active');setFeedback('','Теперь найди смысловую пару.',state.zoneIndex%2===0?'В':'К');return}if(state.selected===card){card.classList.remove('active');state.selected=null;setFeedback('','Выбери карточку. Найди ей смысловую пару и соедини.');return}const first=state.selected;state.locked=true;if(first.dataset.pair===card.dataset.pair){resolvePair(first.dataset.pair,first,card);state.locked=false}else{markWrong(first.dataset.pair);card.classList.add('active','wrong');first.classList.add('wrong');setFeedback('hint','Эти карточки не пара. Попробуй ещё.',state.zoneIndex%2===0?'К':'В');{const token=state.runEpoch;runLater(()=>{first.classList.remove('active','wrong');card.classList.remove('active','wrong');state.selected=null;state.locked=false;setFeedback('','Попробуй ещё: выбери карточку и найди ей смысловую пару.')},620,token)}}}
 function homonymClick(card){if(state.locked||card.disabled)return;if(!state.selected){if(card.dataset.kind!=='word'){card.classList.add('wrong');setFeedback('hint','Сначала выбери слово, для которого ищешь смысловую пару.','К');{const token=state.runEpoch;runLater(()=>card.classList.remove('wrong'),480,token)};return}state.selected=card;card.classList.add('active');setFeedback('','Теперь найди одну карточку, где показаны два разных значения этого слова.','В');return}if(card.dataset.kind==='word'){state.selected.classList.remove('active');state.selected=card;card.classList.add('active');setFeedback('','Теперь найди одну составную карточку с двумя значениями этого слова.','В');return}const first=state.selected;state.locked=true;if(first.dataset.pair===card.dataset.pair){resolvePair(first.dataset.pair,first,card);state.locked=false}else{markWrong(first.dataset.pair);card.classList.add('active','wrong');first.classList.add('wrong');setFeedback('hint','Эти карточки не пара. Попробуй ещё.','К');{const token=state.runEpoch;runLater(()=>{first.classList.remove('active','wrong');card.classList.remove('active','wrong');state.selected=null;state.locked=false;setFeedback('hint','Попробуй ещё: сначала выбери слово.','К')},620,token)}}}
-function drawConnection(a,b){const root=$('boardWrap').getBoundingClientRect(),ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();const rel=r=>({left:r.left-root.left,top:r.top-root.top,right:r.right-root.left,bottom:r.bottom-root.top,width:r.width,height:r.height,cx:r.left-root.left+r.width/2,cy:r.top-root.top+r.height/2});const A=rel(ra),B=rel(rb);let x1,y1,x2,y2,d;const isHomonym=a.dataset.kind||b.dataset.kind;if(isHomonym){const word=a.dataset.kind==='word'?A:B,meaning=a.dataset.kind==='meaning'?A:B;x1=word.right;y1=word.cy;x2=meaning.left;y2=meaning.cy;const gapLeft=Math.min(word.right,meaning.left),gapRight=Math.max(word.right,meaning.left),gutter=(gapLeft+gapRight)/2;d=`M ${x1} ${y1} C ${x1+12} ${y1}, ${gutter-12} ${y1}, ${gutter} ${y1} L ${gutter} ${y2} C ${gutter+12} ${y2}, ${x2-12} ${y2}, ${x2} ${y2}`}else{const ca={x:A.cx,y:A.cy},cb={x:B.cx,y:B.cy};function edgePoint(R,from,to){const dx=to.x-from.x,dy=to.y-from.y,ax=Math.abs(dx),ay=Math.abs(dy);if(ax<.001&&ay<.001)return{x:R.cx,y:R.cy};const tx=ax?Math.max(0,R.width/2-2)/ax:Infinity,ty=ay?Math.max(0,R.height/2-2)/ay:Infinity,t=Math.min(tx,ty);return{x:R.cx+dx*t,y:R.cy+dy*t}}const p1=edgePoint(A,ca,cb),p2=edgePoint(B,cb,ca);x1=p1.x;y1=p1.y;x2=p2.x;y2=p2.y;const mx=(x1+x2)/2;d=`M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`}const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',d);path.dataset.pair=a.dataset.pair;const c1=document.createElementNS('http://www.w3.org/2000/svg','circle');c1.setAttribute('cx',x1);c1.setAttribute('cy',y1);c1.setAttribute('r',7);const c2=document.createElementNS('http://www.w3.org/2000/svg','circle');c2.setAttribute('cx',x2);c2.setAttribute('cy',y2);c2.setAttribute('r',7);const svg=$('connector');svg.setAttribute('viewBox',`0 0 ${root.width} ${root.height}`);svg.setAttribute('width',root.width);svg.setAttribute('height',root.height);svg.append(path,c1,c2)}
+function drawConnection(a,b){
+ const root=$('boardWrap').getBoundingClientRect(),svg=$('connector');
+ const rel=r=>({left:r.left-root.left,top:r.top-root.top,right:r.right-root.left,bottom:r.bottom-root.top,width:r.width,height:r.height,cx:r.left-root.left+r.width/2,cy:r.top-root.top+r.height/2});
+ const A=rel(a.getBoundingClientRect()),B=rel(b.getBoundingClientRect());
+ const cards=[...$('board').querySelectorAll('.pair-card')];
+ const foreign=cards.filter(c=>c!==a&&c!==b).map(c=>rel(c.getBoundingClientRect()));
+ const CLEAR=11,PORT=14,EPS=.25;
+ const inflate=(r,m)=>({left:r.left-m,top:r.top-m,right:r.right+m,bottom:r.bottom+m});
+ const obstacles=foreign.map(r=>inflate(r,CLEAR));
+ const ownBlockers=[inflate(A,2),inflate(B,2)];
+ const allBlockers=[...obstacles,...ownBlockers];
+ const inside=(p,r)=>p.x>r.left+EPS&&p.x<r.right-EPS&&p.y>r.top+EPS&&p.y<r.bottom-EPS;
+ const segmentHits=(p,q,r)=>{
+   if(Math.abs(p.y-q.y)<EPS){const y=p.y;if(y<=r.top+EPS||y>=r.bottom-EPS)return false;const lo=Math.min(p.x,q.x),hi=Math.max(p.x,q.x);return hi>r.left+EPS&&lo<r.right-EPS}
+   if(Math.abs(p.x-q.x)<EPS){const x=p.x;if(x<=r.left+EPS||x>=r.right-EPS)return false;const lo=Math.min(p.y,q.y),hi=Math.max(p.y,q.y);return hi>r.top+EPS&&lo<r.bottom-EPS}
+   return true
+ };
+ const clearSegment=(p,q,blockers=allBlockers)=>blockers.every(r=>!segmentHits(p,q,r));
+ const anchorSet=R=>[
+   {edge:{x:R.left,y:R.cy},out:{x:R.left-PORT,y:R.cy},side:'L'},
+   {edge:{x:R.right,y:R.cy},out:{x:R.right+PORT,y:R.cy},side:'R'},
+   {edge:{x:R.cx,y:R.top},out:{x:R.cx,y:R.top-PORT},side:'T'},
+   {edge:{x:R.cx,y:R.bottom},out:{x:R.cx,y:R.bottom+PORT},side:'B'}
+ ];
+ const simplify=pts=>{const out=[];for(const p of pts){const prev=out[out.length-1];if(prev&&Math.abs(prev.x-p.x)<EPS&&Math.abs(prev.y-p.y)<EPS)continue;out.push(p)}let changed=true;while(changed){changed=false;for(let i=1;i<out.length-1;i++){const p=out[i-1],q=out[i],r=out[i+1];if((Math.abs(p.x-q.x)<EPS&&Math.abs(q.x-r.x)<EPS)||(Math.abs(p.y-q.y)<EPS&&Math.abs(q.y-r.y)<EPS)){out.splice(i,1);changed=true;break}}}return out};
+ function routeOrthogonal(s,t){
+   const outer=24,minX=-outer,maxX=root.width+outer,minY=-outer,maxY=root.height+outer;
+   const xs=new Set([minX,maxX,s.x,t.x]),ys=new Set([minY,maxY,s.y,t.y]);
+   allBlockers.forEach(r=>{xs.add(r.left);xs.add(r.right);ys.add(r.top);ys.add(r.bottom)});
+   const xv=[...xs].filter(x=>x>=minX-EPS&&x<=maxX+EPS).sort((x,y)=>x-y),yv=[...ys].filter(y=>y>=minY-EPS&&y<=maxY+EPS).sort((x,y)=>x-y);
+   const nodes=[],byKey=new Map();
+   for(const x of xv)for(const y of yv){const p={x,y};if(allBlockers.some(r=>inside(p,r)))continue;const id=nodes.length;nodes.push(p);byKey.set(`${x}|${y}`,id)}
+   const sid=nodes.length;nodes.push(s);const tid=nodes.length;nodes.push(t);
+   const adj=Array.from({length:nodes.length},()=>[]);
+   const connect=(i,j)=>{const p=nodes[i],q=nodes[j];if(!clearSegment(p,q))return;const d=Math.abs(p.x-q.x)+Math.abs(p.y-q.y);if(d<EPS)return;const dir=Math.abs(p.x-q.x)<EPS?'V':'H';adj[i].push({j,d,dir});adj[j].push({j:i,d,dir})};
+   for(const y of yv){const ids=[];for(const x of xv){const id=byKey.get(`${x}|${y}`);if(id!==undefined)ids.push(id)}ids.sort((i,j)=>nodes[i].x-nodes[j].x);for(let k=1;k<ids.length;k++)connect(ids[k-1],ids[k])}
+   for(const x of xv){const ids=[];for(const y of yv){const id=byKey.get(`${x}|${y}`);if(id!==undefined)ids.push(id)}ids.sort((i,j)=>nodes[i].y-nodes[j].y);for(let k=1;k<ids.length;k++)connect(ids[k-1],ids[k])}
+   for(let i=0;i<sid;i++){if((Math.abs(nodes[i].x-s.x)<EPS||Math.abs(nodes[i].y-s.y)<EPS))connect(sid,i);if((Math.abs(nodes[i].x-t.x)<EPS||Math.abs(nodes[i].y-t.y)<EPS))connect(tid,i)}
+   if(Math.abs(s.x-t.x)<EPS||Math.abs(s.y-t.y)<EPS)connect(sid,tid);
+   const states=new Map(),pq=[];const push=(node,dir,cost,prev)=>{const key=`${node}|${dir||'-'}`;const old=states.get(key);if(old&&old.cost<=cost)return;states.set(key,{cost,prev,node,dir});pq.push({key,cost});pq.sort((a,b)=>a.cost-b.cost)};
+   push(sid,null,0,null);let finalKey=null;
+   while(pq.length){const cur=pq.shift(),st=states.get(cur.key);if(!st||st.cost!==cur.cost)continue;if(st.node===tid){finalKey=cur.key;break}for(const e of adj[st.node]){const bend=st.dir&&st.dir!==e.dir?20:0;push(e.j,e.dir,st.cost+e.d+bend,cur.key)}}
+   if(!finalKey)return null;const rev=[];let k=finalKey;while(k){const st=states.get(k);rev.push(nodes[st.node]);k=st.prev}return simplify(rev.reverse())
+ }
+ let best=null;
+ for(const aa of anchorSet(A))for(const bb of anchorSet(B)){
+   if(!clearSegment(aa.edge,aa.out,[...obstacles,inflate(B,2)])||!clearSegment(bb.edge,bb.out,[...obstacles,inflate(A,2)]))continue;
+   const mid=routeOrthogonal(aa.out,bb.out);if(!mid)continue;
+   const pts=simplify([aa.edge,aa.out,...mid,bb.out,bb.edge]);
+   let len=0,bends=0;for(let i=1;i<pts.length;i++){len+=Math.abs(pts[i].x-pts[i-1].x)+Math.abs(pts[i].y-pts[i-1].y);if(i>1){const p=pts[i-2],q=pts[i-1],r=pts[i];const d1=Math.abs(p.x-q.x)<EPS?'V':'H',d2=Math.abs(q.x-r.x)<EPS?'V':'H';if(d1!==d2)bends++}}
+   const centerBias=Math.abs((aa.edge.x-bb.edge.x))<Math.abs((aa.edge.y-bb.edge.y))?(aa.side==='T'||aa.side==='B'?0:10):(aa.side==='L'||aa.side==='R'?0:10);
+   const score=len+bends*18+centerBias;if(!best||score<best.score)best={score,pts}
+ }
+ if(!best){
+   const left=-24,top=-24,right=root.width+24,bottom=root.height+24,W=right-left,H=bottom-top,P=2*(W+H);
+   const project=a=>a.side==='T'?{x:a.out.x,y:top}:a.side==='R'?{x:right,y:a.out.y}:a.side==='B'?{x:a.out.x,y:bottom}:{x:left,y:a.out.y};
+   const scalar=p=>Math.abs(p.y-top)<EPS?p.x-left:Math.abs(p.x-right)<EPS?W+(p.y-top):Math.abs(p.y-bottom)<EPS?W+H+(right-p.x):W+H+W+(bottom-p.y);
+   const pointAt=s=>{s=((s%P)+P)%P;if(s<=W)return{x:left+s,y:top};if(s<=W+H)return{x:right,y:top+(s-W)};if(s<=2*W+H)return{x:right-(s-W-H),y:bottom};return{x:left,y:bottom-(s-2*W-H)}};
+   const cw=(pa,pb)=>{let sa=scalar(pa),sb=scalar(pb);if(sb<sa)sb+=P;const cuts=[W,W+H,2*W+H,P, P+W,P+W+H,P+2*W+H].filter(v=>v>sa+EPS&&v<sb-EPS);return[pa,...cuts.map(pointAt),pb]};
+   const pathClear=pts=>{for(let i=1;i<pts.length;i++)if(!clearSegment(pts[i-1],pts[i]))return false;return true};
+   for(const aa of anchorSet(A))for(const bb of anchorSet(B)){
+     if(!clearSegment(aa.edge,aa.out,[...obstacles,inflate(B,2)])||!clearSegment(bb.edge,bb.out,[...obstacles,inflate(A,2)]))continue;
+     const pa=project(aa),pb=project(bb),routes=[cw(pa,pb),cw(pb,pa).reverse()];
+     for(const rim of routes){const pts=simplify([aa.edge,aa.out,pa,...rim,pb,bb.out,bb.edge]);if(!pathClear(pts.slice(1,-1)))continue;let len=0,bends=0;for(let i=1;i<pts.length;i++){len+=Math.abs(pts[i].x-pts[i-1].x)+Math.abs(pts[i].y-pts[i-1].y);if(i>1){const p=pts[i-2],q=pts[i-1],r=pts[i],d1=Math.abs(p.x-q.x)<EPS?'V':'H',d2=Math.abs(q.x-r.x)<EPS?'V':'H';if(d1!==d2)bends++}}const score=len+bends*18;if(!best||score<best.score)best={score,pts}}
+   }
+ }
+ if(!best){
+   /* Guaranteed generic frame fallback. Each selected card first exits through a clear
+      outward ray. The remaining route stays on an expanded frame outside the board,
+      so every foreign card remains an obstacle and no pair-specific geometry is used. */
+   const M=52,fieldRects=[A,B,...foreign],frame={left:Math.min(...fieldRects.map(r=>r.left))-M,top:Math.min(...fieldRects.map(r=>r.top))-M,right:Math.max(...fieldRects.map(r=>r.right))+M,bottom:Math.max(...fieldRects.map(r=>r.bottom))+M};
+   const frameExit=(R,el,otherR)=>anchorSet(R).map(a=>{
+     const far=a.side==='L'?{x:frame.left,y:a.edge.y}:a.side==='R'?{x:frame.right,y:a.edge.y}:a.side==='T'?{x:a.edge.x,y:frame.top}:{x:a.edge.x,y:frame.bottom};
+     const blockers=[...obstacles,inflate(otherR,2)];
+     return clearSegment(a.edge,far,blockers)?{side:a.side,edge:a.edge,far}:null
+   }).filter(Boolean);
+   const W=frame.right-frame.left,H=frame.bottom-frame.top,P=2*(W+H);
+   const scalar=p=>Math.abs(p.y-frame.top)<EPS?p.x-frame.left:Math.abs(p.x-frame.right)<EPS?W+(p.y-frame.top):Math.abs(p.y-frame.bottom)<EPS?W+H+(frame.right-p.x):W+H+W+(frame.bottom-p.y);
+   const pointAt=t=>{t=((t%P)+P)%P;if(t<=W)return{x:frame.left+t,y:frame.top};if(t<=W+H)return{x:frame.right,y:frame.top+(t-W)};if(t<=2*W+H)return{x:frame.right-(t-W-H),y:frame.bottom};return{x:frame.left,y:frame.bottom-(t-2*W-H)}};
+   const rimCW=(pa,pb)=>{let sa=scalar(pa),sb=scalar(pb);if(sb<sa)sb+=P;const turns=[W,W+H,2*W+H,P,P+W,P+W+H,P+2*W+H].filter(v=>v>sa+EPS&&v<sb-EPS);return[pa,...turns.map(pointAt),pb]};
+   const exitsA=frameExit(A,a,B),exitsB=frameExit(B,b,A);
+   for(const ea of exitsA)for(const eb of exitsB){
+     for(const rim of [rimCW(ea.far,eb.far),rimCW(eb.far,ea.far).reverse()]){
+       const pts=simplify([ea.edge,...rim,eb.edge]);
+       let ok=true,len=0,bends=0;
+       for(let i=1;i<pts.length;i++){
+         if(!clearSegment(pts[i-1],pts[i],obstacles)){ok=false;break}
+         len+=Math.abs(pts[i].x-pts[i-1].x)+Math.abs(pts[i].y-pts[i-1].y);
+         if(i>1){const p=pts[i-2],q=pts[i-1],r=pts[i],d1=Math.abs(p.x-q.x)<EPS?'V':'H',d2=Math.abs(q.x-r.x)<EPS?'V':'H';if(d1!==d2)bends++}
+       }
+       if(!ok)continue;const score=len+bends*18;if(!best||score<best.score)best={score,pts};
+     }
+   }
+ }
+ if(!best)return;
+ const pts=simplify(best.pts),d=pts.map((p,i)=>`${i?'L':'M'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' '),x1=pts[0].x,y1=pts[0].y,x2=pts[pts.length-1].x,y2=pts[pts.length-1].y;
+ const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',d);path.dataset.pair=a.dataset.pair;
+ const c1=document.createElementNS('http://www.w3.org/2000/svg','circle');c1.setAttribute('cx',x1);c1.setAttribute('cy',y1);c1.setAttribute('r',7);
+ const c2=document.createElementNS('http://www.w3.org/2000/svg','circle');c2.setAttribute('cx',x2);c2.setAttribute('cy',y2);c2.setAttribute('r',7);
+ svg.setAttribute('viewBox',`0 0 ${root.width} ${root.height}`);svg.setAttribute('width',root.width);svg.setAttribute('height',root.height);svg.append(path,c1,c2)
+}
 function redrawConnections(){if($('gameScreen').classList.contains('hidden'))return;const matched=[...$('board').querySelectorAll('.pair-card.matched')];$('connector').innerHTML='';const groups={};matched.forEach(c=>(groups[c.dataset.pair]??=[]).push(c));Object.values(groups).forEach(g=>{if(g.length===2)drawConnection(g[0],g[1])})}
 function completeZone(){if(state.completedZones.has(state.zoneIndex))return;state.completedZones.add(state.zoneIndex);renderProgress();$('fragmentIcon').textContent=ZONES[state.zoneIndex].icon;$('zoneDoneTitle').textContent=`Фрагмент карты ${state.zoneIndex+1}/4 найден.`;$('zoneDoneText').textContent=state.zoneIndex===3?'Все четыре части карты готовы соединиться.':'На карте появилась новая дорожка.';$('nextZoneBtn').textContent=state.zoneIndex===3?'Открыть Парк слов':'В следующую зону';$('zoneComplete').classList.remove('hidden');$('app').classList.add('world-lit')}
 function nextZone(){$('zoneComplete').classList.add('hidden');if(state.zoneIndex===3){showFinal();return}state.zoneIndex++;renderZone();window.scrollTo({top:0,left:0,behavior:'instant'})}
