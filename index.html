@@ -66,361 +66,277 @@ button{touch-action:manipulation}
 @media(max-width:360px){.zone-characters{width:76px;height:60px}.approved-characters{width:225px}.approved-final-characters{width:190px}}
 </style>
 
-<style id="g011-approved-visual-theme">
-/* G-011 visual correction: approved scenic language only. Gameplay/data architecture unchanged. */
-:root{
-  --scene-bg:url("assets/visual/scene-synonyms-bg.jpg");
-  --scene-cats:url("assets/visual/cats-synonyms.png");
-  --parchment:#fff1c7;
-  --parchment-deep:#e8bd73;
-  --navy:#173755;
-}
-html,body{background:#163b42}
-.app{
-  background:
-    radial-gradient(circle at 18% 8%,rgba(255,227,133,.13),transparent 23%),
-    linear-gradient(180deg,#214f53,#173f3d);
-}
+<style id="real-html-approved-preview">
+html,body{background:#153d32!important}
+.app{min-height:100vh;background:#153d32!important;overflow:auto!important}
 .app::before,.cloud,.park-path,.tree,.lamp{display:none!important}
-.header{
-  max-width:1320px;padding:12px 18px 0;
-}
-.brand{
-  background:rgba(255,249,225,.92);border:2px solid rgba(124,87,46,.45);
-  padding:7px 12px;border-radius:16px;box-shadow:0 8px 24px rgba(24,44,37,.18);
-  backdrop-filter:blur(8px);
-}
-.brand-badge{background:linear-gradient(145deg,#f6cc66,#e59745);border-color:#fff2c8}
-.brand small{color:#6a604d}
-.ghost{
-  background:rgba(255,249,225,.91);border:2px solid rgba(124,87,46,.32);
-  color:#39556b;box-shadow:0 8px 20px rgba(26,52,45,.16)
-}
-.shell{max-width:1320px;padding:0 18px 36px;margin-top:10px}
+.header{position:absolute!important;z-index:50;left:18px;right:18px;top:14px;max-width:none!important;padding:0!important;pointer-events:none}
+.header .brand{pointer-events:auto;background:rgba(255,250,228,.95)!important;border:2px solid rgba(115,82,48,.42)!important;border-radius:18px!important;padding:7px 12px!important;box-shadow:0 7px 20px rgba(20,45,31,.18)!important}
+.header .brand-badge{background:linear-gradient(145deg,#f4c45a,#e78e45)!important}
+.header .top-actions{pointer-events:auto}
+.header .ghost{background:rgba(255,250,228,.94)!important;border:2px solid rgba(115,82,48,.35)!important;color:#274e61!important}
+.shell{max-width:1440px!important;margin:0 auto!important;padding:0!important}
+.panel{border:0!important;box-shadow:none!important;background:transparent!important;padding:0!important}
 
-/* START — full scenic world, no large white UI slab */
-#startScreen{
-  position:relative;overflow:hidden;min-height:760px;border-radius:34px;
-  background:
-    linear-gradient(180deg,rgba(7,35,35,.02),rgba(8,45,31,.10)),
-    url("assets/visual/scene-start.jpg") center/cover no-repeat;
-  box-shadow:0 24px 70px rgba(10,34,31,.35);
-  border:2px solid rgba(255,244,206,.72);
-}
-#startScreen .hero{display:block;min-height:760px;padding:0}
-#startScreen .scene-card{display:none}
-#startScreen .hero-card{
-  position:absolute;left:28px;bottom:25px;width:min(500px,calc(100% - 56px));
-  background:linear-gradient(145deg,rgba(255,247,216,.96),rgba(255,236,185,.93));
-  border:3px solid rgba(142,98,53,.58);border-radius:24px;padding:18px 20px;
-  box-shadow:0 16px 35px rgba(43,49,28,.24);backdrop-filter:blur(6px);
-}
-#startScreen .author-mark{background:rgba(255,255,255,.62);color:#34604c}
-#startScreen .author-series{color:#5f604f}
-#startScreen .hero h1{font-size:31px;margin:9px 0 7px;letter-spacing:-.025em;color:var(--navy)}
-#startScreen .hero p{font-size:14px;line-height:1.38;margin:0 0 10px;color:#41576a}
-#startScreen .instruction{
-  margin:10px 0 12px;padding:9px 11px;background:rgba(255,255,255,.62);
-  border:1px solid rgba(112,88,51,.18);font-size:13px
-}
-#startScreen .primary{
-  background:linear-gradient(180deg,#61b94d,#328e42);
-  border:2px solid #ecffd9;box-shadow:0 5px 0 #236a36,0 11px 22px rgba(36,89,38,.25);
-}
-#startScreen .bank-status{background:rgba(255,241,237,.92)}
+/* START: exact approved composition as an aspect-ratio scene; no old white hero UI. */
+#startScreen{position:relative;width:100%;aspect-ratio:1448/1086;overflow:hidden;background:#7fc06d!important}
+.approved-start-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+#startScreen .hero{position:absolute!important;inset:0!important;display:block!important;padding:0!important;min-height:0!important}
+#startScreen .scene-card{display:none!important}
+#startScreen .hero-card{position:absolute!important;inset:0!important;width:auto!important;max-width:none!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
+#startScreen .author-mark{position:absolute!important;left:30px;top:26px!important;z-index:4;background:rgba(255,250,228,.96)!important;color:#244459!important;border:0!important;border-radius:18px!important;padding:10px 16px!important;font-weight:900!important;box-shadow:0 8px 22px rgba(20,45,31,.17)!important}
+#startScreen .author-series{display:none!important}
+#startScreen h1,#startScreen p,#startScreen .instruction{display:none!important}
+#startScreen .cta-row{position:absolute!important;left:50%!important;bottom:24px!important;transform:translateX(-50%)!important;margin:0!important;z-index:5}
+#startScreen #startBtn{min-width:300px!important;padding:15px 26px!important;border-radius:20px!important;background:linear-gradient(180deg,#61ba4e,#2f9346)!important;border:3px solid #eaffd9!important;box-shadow:0 6px 0 #246b38,0 14px 26px rgba(31,88,42,.28)!important;font-size:20px!important;color:white!important;font-weight:950!important}
+#startScreen .bank-status{position:absolute!important;left:50%!important;bottom:96px!important;transform:translateX(-50%)!important;width:max-content;max-width:70%;z-index:6}
 
-/* GAME — scenic background + live cards. The approved art is atmosphere, not baked content. */
-#gameScreen{
-  position:relative;isolation:isolate;min-height:720px;border-radius:32px;overflow:hidden;
-  padding:24px 270px 28px 160px;
-  box-shadow:0 24px 70px rgba(10,34,31,.35);border:2px solid rgba(255,244,206,.62);
-}
-#gameScreen::before{
-  content:"";position:absolute;z-index:-2;inset:0;
-  background-image:
-    linear-gradient(180deg,rgba(15,31,31,.03),rgba(18,36,28,.15)),
-    var(--scene-bg);
-  background-position:center;background-size:cover;background-repeat:no-repeat;
-}
-#gameScreen::after{
-  content:"";position:absolute;z-index:2;right:-4px;bottom:-3px;width:300px;height:300px;
-  background:var(--scene-cats) right bottom/contain no-repeat;pointer-events:none;
-  filter:drop-shadow(0 12px 18px rgba(25,39,25,.18));
-}
-#gameScreen .progress-strip{
-  position:absolute;z-index:5;left:18px;top:94px;width:126px;margin:0;
-  display:flex;flex-direction:column;gap:8px;
-}
-#gameScreen .piece{
-  min-height:58px;padding:8px 9px;border-radius:15px;
-  background:linear-gradient(145deg,rgba(39,91,117,.94),rgba(30,68,91,.95));
-  color:white;border:2px solid rgba(244,213,134,.42);
-  box-shadow:0 10px 22px rgba(20,38,34,.23);backdrop-filter:blur(4px)
-}
-#gameScreen .piece .n{background:#f3ca67;color:#274b56}
-#gameScreen .piece b{color:#fff;font-size:11px}
-#gameScreen .piece span{color:#e7f1ed;font-size:9px}
-#gameScreen .piece.done{background:linear-gradient(145deg,#3e875e,#2d6d51);border-color:#f4d978}
-#gameScreen .piece.current{outline:3px solid rgba(250,218,117,.72);background:linear-gradient(145deg,#3c7192,#2b5773)}
-#gameScreen .game-card{
-  position:relative;z-index:4;overflow:visible;padding:0;
-  background:transparent;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;
-}
-#gameScreen .game-card::before{display:none}
-#gameScreen .zone-head{
-  display:block;text-align:center;width:min(720px,100%);margin:0 auto 18px;
-  background:linear-gradient(180deg,#fff5d5,#f4d28c);
-  border:3px solid #a97846;border-radius:18px;padding:11px 18px;
-  box-shadow:0 6px 0 rgba(111,73,38,.45),0 13px 24px rgba(30,45,35,.19);
-}
-#gameScreen .zone-kicker{color:#315a68;font-size:10px}
-#gameScreen .zone-head h2{font-size:22px;margin:2px 0;color:#203d5a}
-#gameScreen .zone-rule{font-size:16px;line-height:1.28;color:#203d5a;font-weight:900}
-#gameScreen .zone-counter{
-  position:absolute;right:-2px;top:-1px;background:#fff4cf;border:2px solid #a97846;
-  color:#213f58;border-radius:13px;padding:7px 11px;box-shadow:0 5px 12px rgba(41,50,34,.16)
-}
-#gameScreen .board-wrap{position:relative}
-#gameScreen .cards{gap:13px;min-height:330px;align-content:center}
-#gameScreen .pair-card{
-  min-height:132px;border-radius:16px;
-  background:linear-gradient(180deg,#fffdf8,#f7efe2);
-  border:3px solid #aa805a;color:#152f51;
-  box-shadow:0 7px 0 rgba(111,74,43,.27),0 12px 20px rgba(31,43,35,.17);
-  font-size:clamp(18px,2vw,23px)
-}
-#gameScreen .pair-card:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 0 rgba(111,74,43,.25),0 15px 26px rgba(31,43,35,.21)}
-#gameScreen .pair-card.active{
-  border-color:#58be3e;box-shadow:0 0 0 5px rgba(102,229,67,.28),0 0 24px rgba(119,246,75,.55),0 7px 0 rgba(54,105,39,.3)
-}
-#gameScreen .pair-card.matched{
-  opacity:1;background:linear-gradient(180deg,#fffef8,#eefbe5);
-  border-color:#5dbe3f;box-shadow:0 0 0 4px rgba(105,236,68,.25),0 0 22px rgba(126,249,76,.45),0 7px 0 rgba(56,111,39,.26)
-}
-#gameScreen .pair-card.wrong{
-  border-color:#f04d2f;box-shadow:0 0 0 4px rgba(255,87,51,.22),0 0 20px rgba(255,77,45,.45),0 7px 0 rgba(136,58,39,.22)
-}
-#gameScreen .connector path{stroke:#79ef4e;stroke-width:8;filter:drop-shadow(0 0 7px rgba(126,255,86,.7))}
-#gameScreen .connector circle{stroke:#69cf48;fill:#fff9e4}
-#gameScreen .feedback-row{
-  position:absolute;right:-242px;top:74px;width:224px;display:block;z-index:8
-}
-#gameScreen .feedback-row .feedback{
-  margin:0;background:linear-gradient(180deg,#63bb4f,#3d963e);color:white;border:3px solid #edffdc;
-  border-radius:25px;padding:14px 15px;min-height:64px;
-  box-shadow:0 5px 0 #2e7834,0 12px 22px rgba(26,62,31,.24);font-size:14px
-}
-#gameScreen .feedback-row .feedback.hint{
-  background:linear-gradient(180deg,#fffdf6,#fff3e7);color:#c53c27;border-color:#ff7b55;
-  box-shadow:0 5px 0 #ba4936,0 12px 22px rgba(86,43,31,.20)
-}
-#gameScreen .feedback-row .feedback .face{display:none}
+/* GAME: full 16:9 scene, preserving the approved composition. */
+#gameScreen{position:relative;width:100%;aspect-ratio:1672/941;overflow:hidden;background:#8ca66d!important}
+.approved-zone-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;z-index:0}
+#gameScreen .progress-strip,#gameScreen .zone-head{display:none!important}
+#gameScreen .game-card{position:absolute!important;z-index:4;left:19.2%!important;top:31.8%!important;width:47.8%!important;height:47.2%!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;overflow:visible!important}
+#gameScreen .game-card::before{display:none!important}
+#gameScreen .board-wrap{position:absolute!important;inset:0!important;margin:0!important;overflow:visible!important}
+/* scenic veil removes the baked sample cards/line without creating a white panel */
+#gameScreen .board-wrap::before{content:"";position:absolute;z-index:-1;left:-1%;right:-1%;top:-2%;bottom:-2%;border-radius:26px;background:rgba(91,76,50,.28);backdrop-filter:blur(18px) saturate(.86) brightness(.84);-webkit-backdrop-filter:blur(18px) saturate(.86) brightness(.84);box-shadow:inset 0 0 65px rgba(46,61,34,.14)}
+#gameScreen #board{position:absolute!important;inset:0!important}
+#gameScreen .cards{height:100%!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(2,1fr)!important;gap:8.8% 4.2%!important;align-content:stretch!important}
+#gameScreen .pair-card{min-height:0!important;height:100%!important;padding:8px!important;border-radius:17px!important;background:linear-gradient(180deg,#fffef9,#f7efe2)!important;border:2.5px solid #b48a63!important;color:#173452!important;font-size:clamp(17px,1.75vw,25px)!important;font-weight:950!important;box-shadow:0 6px 0 rgba(110,75,45,.22),0 12px 22px rgba(31,43,35,.13)!important}
+#gameScreen .pair-card.active{border-color:#72db4b!important;box-shadow:0 0 0 5px rgba(109,235,71,.38),0 0 25px rgba(113,241,75,.58),0 6px 0 rgba(57,105,42,.25)!important}
+#gameScreen .pair-card.matched{opacity:1!important;background:linear-gradient(180deg,#fffef9,#f4fae9)!important;border-color:#64cf46!important;box-shadow:0 0 0 5px rgba(113,236,76,.38),0 0 27px rgba(117,243,78,.63),0 6px 0 rgba(57,105,42,.25)!important}
+#gameScreen .pair-card.wrong{border-color:#f14a2d!important;box-shadow:0 0 0 5px rgba(255,81,48,.32),0 0 24px rgba(251,79,44,.55),0 6px 0 rgba(129,52,38,.23)!important}
+#gameScreen .connector{z-index:10!important}
+#gameScreen .connector path{stroke:#7cef52!important;stroke-width:8!important;filter:drop-shadow(0 0 7px rgba(113,244,77,.8))!important}
+#gameScreen .connector circle{fill:#fff9e3!important;stroke:#63c847!important;stroke-width:6!important}
+#gameScreen .feedback-row{position:absolute!important;z-index:12;left:110.5%!important;top:-20%!important;width:35%!important;display:block!important}
+#gameScreen .feedback{min-height:64px!important;margin:0!important;padding:13px 15px!important;border-radius:24px!important;background:linear-gradient(180deg,#fffdf5,#fff4e5)!important;border:3px solid #cc9a61!important;color:#456073!important;box-shadow:0 6px 0 rgba(128,89,50,.24),0 12px 22px rgba(35,52,37,.16)!important;font-weight:900!important;font-size:15px!important}
+#gameScreen .feedback.success{background:linear-gradient(180deg,#67bd4e,#3f9b3e)!important;border-color:#ecffda!important;color:white!important;box-shadow:0 6px 0 #2e7834,0 12px 22px rgba(25,68,30,.26)!important}
+#gameScreen .feedback.hint{background:linear-gradient(180deg,#fffdf8,#fff0e7)!important;border-color:#ef6345!important;color:#c33d2a!important;box-shadow:0 6px 0 #b34b39,0 12px 22px rgba(77,41,31,.18)!important}
+#gameScreen .feedback .face{display:none!important}
 #gameScreen .zone-characters{display:none!important}
-#gameScreen .homonym-grid{gap:14px}
-#gameScreen .h-word{
-  background:linear-gradient(180deg,#fff7d3,#ffe6a7);border-color:#a97846
-}
-#gameScreen .composite{background:linear-gradient(180deg,#fffefb,#f9f2e7)}
-#gameScreen .double-label{background:#315d78;color:white}
-#gameScreen .half{border:1px solid rgba(57,98,117,.12)}
 
-/* ZONE COMPLETE — parchment reward over the still-visible scene */
-.zone-complete{background:rgba(17,39,33,.34);backdrop-filter:blur(4px)}
-.zone-box{
-  background:linear-gradient(160deg,#fff3cf,#f4d38f);border:3px solid #a67745;border-radius:28px;
-  box-shadow:0 10px 0 rgba(101,68,38,.42),0 28px 70px rgba(18,40,31,.32)
-}
-.fragment-big{background:linear-gradient(145deg,#fff9da,#edd48e);border-color:#b98847}
-.zone-box .primary{background:linear-gradient(180deg,#62b94e,#358f43);border:2px solid #edffdc;box-shadow:0 5px 0 #266f36}
-
-/* FINAL — approved illustrated map scene */
-#finalScreen{
-  position:relative;overflow:hidden;min-height:760px;border-radius:34px;
-  background:
-    linear-gradient(180deg,rgba(10,39,26,.02),rgba(10,39,26,.08)),
-    url("assets/visual/scene-final.jpg") center/cover no-repeat;
-  box-shadow:0 24px 70px rgba(10,34,31,.35);border:2px solid rgba(255,244,206,.72)
-}
-#finalScreen .final-card{min-height:760px;padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}
-#finalScreen .final-top,#finalScreen .final-scene{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}
-#finalScreen .final-actions{
-  position:absolute;z-index:8;left:50%;bottom:27px;transform:translateX(-50%);
-  margin:0;gap:16px;white-space:nowrap
-}
-#finalScreen .final-actions .primary{
-  background:linear-gradient(180deg,#62ba4f,#348e42);border:3px solid #eaffd5;
-  box-shadow:0 5px 0 #286f38,0 13px 25px rgba(31,78,38,.25);min-width:190px
-}
-#finalScreen .final-actions .secondary{
-  background:linear-gradient(180deg,#fff5d3,#f2cf87);border:3px solid #a67845;color:#173954;
-  box-shadow:0 5px 0 #8a623d,0 13px 25px rgba(57,50,32,.18);min-width:180px
-}
-#finalScreen .teacher-facts{
-  position:absolute;left:18px;bottom:18px;margin:0;max-width:235px;z-index:9
-}
-#finalScreen .teacher-facts details{
-  background:rgba(255,247,219,.94);border:2px solid rgba(135,94,49,.45);box-shadow:0 10px 22px rgba(28,44,34,.18)
-}
-
-/* MOBILE: keep the world visible; compress controls instead of replacing scene with white canvas. */
 @media(max-width:900px){
-  #startScreen{min-height:700px;background-position:58% center}
-  #startScreen .hero{min-height:700px}
-  #startScreen .hero-card{left:16px;bottom:16px;width:min(460px,calc(100% - 32px))}
-  #gameScreen{min-height:820px;padding:18px 16px 190px}
-  #gameScreen .progress-strip{
-    position:relative;left:auto;top:auto;width:auto;margin:0 0 10px;
-    display:grid;grid-template-columns:repeat(4,1fr);gap:6px
-  }
-  #gameScreen .piece{min-height:49px;padding:6px}
-  #gameScreen .piece .n{width:27px;height:27px}
-  #gameScreen .piece span{display:none}
-  #gameScreen .zone-head{width:100%;margin-bottom:12px}
-  #gameScreen .zone-counter{position:static;display:inline-block;margin-top:7px}
-  #gameScreen::after{width:230px;height:205px;right:4px;bottom:0}
-  #gameScreen .feedback-row{position:relative;right:auto;top:auto;width:auto;margin-top:10px}
-  #gameScreen .feedback-row .feedback{max-width:calc(100% - 190px)}
-  #gameScreen .cards{grid-template-columns:repeat(2,minmax(0,1fr));min-height:0}
-  #gameScreen .pair-card{min-height:104px}
-  #finalScreen{min-height:720px;background-position:center}
-  #finalScreen .final-card{min-height:720px}
-  #finalScreen .final-actions{bottom:18px;gap:8px}
-  #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{min-width:0;padding:11px 14px}
-  #finalScreen .teacher-facts{left:12px;bottom:76px;max-width:220px}
-}
-@media(max-width:620px){
-  .header{padding:9px 10px 0}.brand{padding:6px 8px}.brand-badge{width:35px;height:35px}
-  .shell{padding:0 8px 24px}
-  #startScreen{min-height:650px;border-radius:24px;background-position:58% center}
-  #startScreen .hero{min-height:650px}
-  #startScreen .hero-card{left:10px;right:10px;bottom:10px;width:auto;padding:13px 14px;border-radius:19px}
-  #startScreen .hero h1{font-size:23px}
-  #startScreen .hero p{font-size:12px}
-  #startScreen .instruction{font-size:11px}
-  #gameScreen{min-height:760px;border-radius:24px;padding:12px 10px 165px}
-  #gameScreen .progress-strip{grid-template-columns:repeat(4,1fr)}
-  #gameScreen .piece b{font-size:8px}
-  #gameScreen .zone-head{padding:9px 10px;border-radius:14px}
-  #gameScreen .zone-head h2{font-size:18px}
-  #gameScreen .zone-rule{font-size:12px}
-  #gameScreen .cards{gap:8px}
-  #gameScreen .pair-card{min-height:88px;padding:9px;font-size:16px;border-radius:13px}
-  #gameScreen .feedback-row .feedback{max-width:calc(100% - 135px);font-size:11px;min-height:52px;padding:10px 11px}
-  #gameScreen::after{width:170px;height:150px}
-  #gameScreen .homonym-grid{grid-template-columns:1fr;gap:8px}
-  #gameScreen .word-stack{grid-template-columns:repeat(3,1fr);grid-template-rows:none}
-  #gameScreen .meaning-stack{grid-template-columns:1fr}
-  #gameScreen .h-word{min-height:68px}
-  #gameScreen .composite{min-height:105px}
-  #finalScreen{min-height:650px;border-radius:24px;background-position:54% center}
-  #finalScreen .final-card{min-height:650px}
-  #finalScreen .teacher-facts{bottom:70px;max-width:185px}
-  #finalScreen .teacher-facts summary{font-size:10px}
+ .header{left:8px;right:8px;top:8px}.header .brand{transform:scale(.82);transform-origin:left top}
+ #startScreen #startBtn{min-width:230px!important;font-size:16px!important;padding:12px 18px!important}
+ #startScreen .author-mark{left:14px!important;top:14px!important;font-size:11px!important;padding:7px 10px!important}
+ #gameScreen .pair-card{font-size:clamp(10px,2vw,16px)!important;border-radius:10px!important}
+ #gameScreen .feedback{font-size:10px!important;min-height:42px!important;padding:8px!important;border-width:2px!important}
 }
 </style>
 
 
-<style id="g011-approved-visual-refinement">
-/* Refinement against the approved screens: keep the scene sharp and localize blur only under live gameplay UI. */
-#startScreen{
-  background-image:
-    linear-gradient(180deg,rgba(8,36,26,.00),rgba(8,36,26,.05)),
-    url("assets/visual/scene-start.jpg");
-}
-#gameScreen::before{
-  background-image:
-    linear-gradient(180deg,rgba(8,26,22,.01),rgba(8,31,22,.06)),
-    var(--scene-bg);
-}
-#gameScreen::after{display:none!important}
-#gameScreen .game-card{
-  padding:16px;
-  border-radius:26px;
-  background:rgba(38,53,41,.13);
-  border:1px solid rgba(255,245,211,.26);
-  box-shadow:0 18px 42px rgba(20,35,27,.13);
-  backdrop-filter:blur(11px) saturate(.92);
-  -webkit-backdrop-filter:blur(11px) saturate(.92);
-}
-#gameScreen .zone-head{
-  background:linear-gradient(180deg,rgba(255,246,213,.98),rgba(244,211,143,.97));
-}
-#gameScreen .pair-card{
-  background:linear-gradient(180deg,rgba(255,254,249,.98),rgba(248,240,226,.98));
-}
-#gameScreen .feedback-row{
-  right:-246px;
-}
+<style id="real-html-approved-preview-refine">
+.header{display:none!important}
+.shell{width:100vw!important;height:100vh!important;max-width:none!important;overflow:hidden!important}
+#startScreen{width:100vw!important;height:100vh!important;aspect-ratio:auto!important;display:grid!important;place-items:center!important;background:#234e3d!important}
+#startScreen::before{content:"";position:absolute;inset:-18px;background:url("assets/visual-preview/start-approved.png") center/cover no-repeat;filter:blur(24px) brightness(.68) saturate(.9);transform:scale(1.04);z-index:0}
+.approved-start-scene{position:relative!important;z-index:1!important;width:100%!important;height:100%!important;object-fit:contain!important}
+#startScreen .hero{z-index:4!important}
+#startScreen .hero-card{z-index:4!important}
+#startScreen .author-mark{display:block!important;left:24px!important;top:22px!important;width:390px!important;min-height:68px!important;padding:12px 18px!important;background:linear-gradient(180deg,#fff8df,#f5e4b8)!important;border:2px solid #b5864d!important;border-radius:20px!important;color:#173d56!important;font-size:15px!important;line-height:1.2!important;text-align:left!important;box-shadow:0 8px 22px rgba(20,45,31,.22)!important}
+#startScreen .cta-row{bottom:22px!important}
+#startScreen #startBtn{min-width:320px!important;font-size:19px!important}
+
+#gameScreen{width:100vw!important;height:100vh!important;aspect-ratio:auto!important;display:block!important;background:#234e3d!important}
+#gameScreen::before{content:"";position:absolute;inset:-18px;background:url("assets/visual-preview/syn-approved.png") center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.88);transform:scale(1.04);z-index:0}
+.approved-zone-scene{position:absolute!important;z-index:1!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
+#gameScreen .game-card{z-index:4!important}
+#gameScreen .feedback-row{left:123%!important;top:-18%!important;width:44%!important}
+#gameScreen .feedback{font-size:16px!important;min-height:70px!important;border-radius:24px!important}
+</style>
+
+
+<style id="real-html-preview-final-fix">
+#startScreen.hidden,#gameScreen.hidden,#finalScreen.hidden{display:none!important}
+#gameScreen .board-wrap::before{background:rgba(91,76,50,.18)!important;backdrop-filter:blur(13px) saturate(.92) brightness(.94)!important;-webkit-backdrop-filter:blur(13px) saturate(.92) brightness(.94)!important}
+#gameScreen .feedback-row{left:123.5%!important;top:-8%!important;width:43%!important}
+#gameScreen .feedback{min-height:74px!important;font-size:17px!important;padding:15px 17px!important}
+</style>
+
+
+<style id="real-html-spread-visual">
+/* Approved implementation spread: scene remains a single preserved composition; live UI occupies the approved interaction zone. */
+.approved-zone-scene,.approved-final-scene,.approved-zone-complete-scene{pointer-events:none;user-select:none}
+#gameScreen::before{background-image:var(--scene-fill,url("assets/visual-preview/syn-approved.png"))!important}
+#gameScreen[data-zone="ant"]::before{background-image:url("assets/visual-preview/ant-approved.png")!important}
+#gameScreen[data-zone="hom"]::before{background-image:url("assets/visual-preview/hom-approved.png")!important}
+#gameScreen[data-zone="phr"]::before{background-image:url("assets/visual-preview/phr-approved.png")!important}
+#gameScreen[data-zone="hom"] .game-card{left:20.1%!important;top:39.5%!important;width:47.5%!important;height:42.8%!important}
+#gameScreen[data-zone="hom"] .board-wrap::before{left:-1.5%!important;right:-1.5%!important;top:-4%!important;bottom:-3%!important;background:rgba(42,66,76,.25)!important;backdrop-filter:blur(14px) saturate(.88) brightness(.9)!important;-webkit-backdrop-filter:blur(14px) saturate(.88) brightness(.9)!important}
+#gameScreen[data-zone="hom"] .homonym-grid{height:100%!important;display:grid!important;grid-template-columns:29% 71%!important;gap:3%!important}
+#gameScreen[data-zone="hom"] .homonym-grid>div>.zone-kicker{display:none!important}
+#gameScreen[data-zone="hom"] .word-stack{height:100%!important;display:grid!important;grid-template-rows:repeat(3,1fr)!important;gap:5%!important}
+#gameScreen[data-zone="hom"] .meaning-stack{height:100%!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:2.7%!important}
+#gameScreen[data-zone="hom"] .h-word,#gameScreen[data-zone="hom"] .composite{min-height:0!important;height:100%!important}
+#gameScreen[data-zone="hom"] .composite{padding:8px!important}
+#gameScreen[data-zone="hom"] .double{gap:4px!important}
+#gameScreen[data-zone="hom"] .half{padding:20px 3px 5px!important}
+#gameScreen[data-zone="hom"] .icon{width:min(58px,34%)!important;height:auto!important}
+#gameScreen[data-zone="hom"] .half b{font-size:8.5px!important}
+#gameScreen[data-zone="hom"] .feedback-row{left:121%!important;top:-26%!important;width:43%!important}
+#gameScreen[data-zone="ant"] .feedback-row,#gameScreen[data-zone="phr"] .feedback-row{left:123.5%!important;top:-8%!important;width:43%!important}
+
+/* Zone complete is its own scenic state, not a white modal over an abstract canvas. */
+.zone-complete{padding:0!important;background:#234e3d!important;backdrop-filter:none!important;overflow:hidden!important}
+.zone-complete::before{content:"";position:absolute;inset:-18px;background:url("assets/visual-preview/zone-complete-approved.png") center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.9);transform:scale(1.04);z-index:0}
+.approved-zone-complete-scene{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
+.zone-box{position:absolute!important;z-index:4;left:13.5%!important;top:22%!important;transform:none!important;width:31%!important;min-width:390px!important;max-width:500px!important;padding:28px 25px 24px!important;border-radius:28px!important;background:linear-gradient(160deg,rgba(255,246,215,.98),rgba(246,218,158,.98))!important;border:3px solid #aa7a48!important;box-shadow:0 9px 0 rgba(112,75,42,.35),0 20px 45px rgba(25,45,31,.24)!important}
+.zone-box .fragment-big{width:135px!important;height:96px!important;margin-bottom:10px!important;background:linear-gradient(145deg,#fff5c8,#ead892)!important;border-color:#bd8f4c!important;font-size:40px!important}
+.zone-box .zone-kicker{color:#416d5a!important}.zone-box h3{color:#1f4057!important;font-size:27px!important}.zone-box p{color:#526778!important}.zone-box .primary{background:linear-gradient(180deg,#60bb4f,#359443)!important;border:3px solid #eaffd9!important;box-shadow:0 5px 0 #2a7438!important}
+
+/* Final: the approved map composition is preserved with live replay/finish controls aligned over it. */
+#finalScreen{position:relative!important;width:100vw!important;height:100vh!important;overflow:hidden!important;background:#315b3f!important}
+#finalScreen::before{content:"";position:absolute;inset:-18px;background:url("assets/visual-preview/final-approved.png") center/cover no-repeat;filter:blur(22px) brightness(.66) saturate(.9);transform:scale(1.04);z-index:0}
+.approved-final-scene{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
+#finalScreen .final-card{position:absolute!important;z-index:4;inset:0!important;min-height:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+#finalScreen .final-top,#finalScreen .final-scene{display:none!important}
+#finalScreen .final-actions{position:absolute!important;z-index:6;left:50%!important;bottom:7.5%!important;transform:translateX(-50%)!important;margin:0!important;display:flex!important;gap:18px!important;flex-wrap:nowrap!important}
+#finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{min-width:235px!important;min-height:66px!important;border-radius:18px!important;font-size:17px!important;font-weight:950!important}
+#finalScreen .final-actions .primary{background:linear-gradient(180deg,#62ba4f,#348f43)!important;border:3px solid #eaffd5!important;box-shadow:0 5px 0 #286f38,0 12px 24px rgba(31,78,38,.24)!important}
+#finalScreen .final-actions .secondary{background:linear-gradient(180deg,#fff4d3,#f0ca7b)!important;border:3px solid #a57845!important;color:#183d57!important;box-shadow:0 5px 0 #875f3a,0 12px 24px rgba(57,50,32,.18)!important}
+#finalScreen .teacher-facts{position:absolute!important;z-index:7;left:18px!important;bottom:18px!important;max-width:240px!important;margin:0!important}
+#finalScreen .teacher-facts details{background:rgba(255,248,222,.94)!important;border:2px solid rgba(139,98,52,.5)!important}
+
 @media(max-width:900px){
-  #gameScreen .game-card{
-    padding:11px;background:rgba(31,48,38,.17);backdrop-filter:blur(9px) saturate(.94);
-    -webkit-backdrop-filter:blur(9px) saturate(.94)
-  }
-  #gameScreen .feedback-row{right:auto}
+ #gameScreen[data-zone="hom"] .game-card{left:18%!important;top:40%!important;width:51%!important;height:43%!important}
+ .zone-box{left:6%!important;top:23%!important;width:43%!important;min-width:330px!important}
+ #finalScreen .final-actions{bottom:5%!important;gap:8px!important}
+ #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{min-width:150px!important;min-height:50px!important;font-size:14px!important}
 }
 </style>
 
 
-<style id="g011-approved-visual-mask-refinement">
-@media(min-width:901px){
-  #gameScreen .game-card{
-    min-height:605px;
-    padding:16px 16px 98px;
-    background:rgba(28,45,36,.48);
-    backdrop-filter:blur(18px) saturate(.86);
-    -webkit-backdrop-filter:blur(18px) saturate(.86);
-  }
-  #gameScreen .feedback-row{
-    padding:7px;
-    border-radius:30px;
-    background:rgba(30,65,43,.76);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-  }
-}
-@media(max-width:900px){
-  #gameScreen .game-card{min-height:0}
-}
+<style id="real-html-review-polish">
+/* Homonyms: preserve one composite card = two meanings, but give each composite enough visual room. */
+#gameScreen[data-zone="hom"] .homonym-grid{grid-template-columns:29% 71%!important;gap:3%!important;height:100%!important}
+#gameScreen[data-zone="hom"] .meaning-stack{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:repeat(3,1fr)!important;gap:4%!important;height:100%!important}
+#gameScreen[data-zone="hom"] .word-stack{height:100%!important;gap:4%!important}
+#gameScreen[data-zone="hom"] .composite{min-height:0!important;height:100%!important;padding:7px 9px!important}
+#gameScreen[data-zone="hom"] .double{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;height:100%!important}
+#gameScreen[data-zone="hom"] .half{flex-direction:row!important;gap:7px!important;justify-content:center!important;padding:16px 7px 6px!important}
+#gameScreen[data-zone="hom"] .icon{width:46px!important;height:46px!important;flex:0 0 auto!important}
+#gameScreen[data-zone="hom"] .half b{font-size:9px!important;margin:0!important;max-width:84px!important}
+#gameScreen[data-zone="hom"] .double-label{top:6px!important;font-size:8px!important}
+#gameScreen[data-zone="hom"] .feedback-row{left:120%!important;top:-27%!important;width:45%!important}
+
+/* Zone-complete: live HTML parchment fully replaces the softened baked content. */
+.zone-box{left:14.5%!important;top:18.5%!important;width:33%!important;min-width:420px!important;max-width:525px!important;min-height:530px!important;padding:42px 34px 28px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;background:linear-gradient(165deg,#fff5d2,#efd292)!important;border:4px solid #a97845!important;box-shadow:0 10px 0 rgba(117,76,40,.38),0 24px 48px rgba(31,48,33,.22)!important}
+.zone-box .fragment-big{width:190px!important;height:145px!important;margin:3px auto 18px!important;border-radius:18px!important;font-size:56px!important;background:linear-gradient(145deg,#fff8d5,#e7d386)!important}
+.zone-box h3{font-size:31px!important;line-height:1.15!important;margin:8px 0 7px!important}.zone-box p{font-size:16px!important;margin:0 0 22px!important}.zone-box .primary{min-width:240px!important;min-height:60px!important;font-size:17px!important;border-radius:17px!important}
+
+/* Final: live buttons cover the softened button area one-for-one. */
+#finalScreen .final-actions{bottom:8.2%!important;gap:34px!important;width:840px!important;justify-content:center!important}
+#finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{min-width:385px!important;min-height:92px!important;border-radius:23px!important;font-size:24px!important}
+#finalScreen .teacher-facts{bottom:10px!important;left:12px!important;max-width:230px!important;opacity:.92}
 </style>
 
 
-<style id="g011-final-scene-refinement">
-#finalScreen::before{
-  content:"";position:absolute;z-index:2;left:0;top:0;width:300px;height:68px;pointer-events:none;
-  background:
-    radial-gradient(circle at 16% 62%,#f6d36d 0 4px,transparent 5px),
-    radial-gradient(circle at 32% 34%,#f3a95d 0 5px,transparent 6px),
-    radial-gradient(circle at 53% 56%,#fff0a0 0 4px,transparent 5px),
-    linear-gradient(150deg,#4f9651 0%,#77b95f 56%,rgba(103,169,83,.0) 100%);
-  border-bottom-right-radius:64px;filter:saturate(1.08)
-}
-@media(min-width:901px){
-  #finalScreen .final-actions{
-    left:58px;right:auto;bottom:92px;transform:none;width:900px;
-    display:grid;grid-template-columns:1.08fr 1fr;gap:36px
-  }
-  #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{
-    min-height:82px;font-size:24px;border-radius:22px
-  }
-  #finalScreen .teacher-facts{bottom:18px}
-}
-.zone-box{color:#183855}
-.zone-box p{color:#40596c}
-.zone-box .zone-kicker{color:#4c7a64}
+<style id="real-html-review-polish-2">
+/* Overlay real controls directly over their approved visual positions; no blurred mask slabs. */
+.zone-box{left:14.5%!important;top:16.5%!important;width:33.5%!important;min-width:430px!important;max-width:535px!important;min-height:585px!important;padding:46px 34px 120px!important;background:linear-gradient(165deg,#fff4cf,#eed08c)!important;border:4px solid #aa7844!important;box-shadow:0 10px 0 rgba(117,76,40,.38),0 24px 48px rgba(31,48,33,.22)!important}
+.zone-box #nextZoneBtn{position:fixed!important;left:50%!important;bottom:7.2%!important;transform:translateX(-50%)!important;width:500px!important;height:115px!important;border-radius:26px!important;font-size:24px!important;background:linear-gradient(180deg,#61bb4e,#349342)!important;border:4px solid #dfffce!important;box-shadow:0 7px 0 #276e37,0 16px 30px rgba(30,75,37,.28)!important}
+.zone-box .fragment-big{width:205px!important;height:155px!important}.zone-box h3{font-size:32px!important}.zone-box p{font-size:17px!important}
+#finalScreen .final-actions{bottom:7.3%!important;width:900px!important;gap:24px!important}
+#finalScreen .final-actions .primary{min-width:430px!important;width:430px!important;height:112px!important;font-size:25px!important;border-radius:24px!important}
+#finalScreen .final-actions .secondary{min-width:430px!important;width:430px!important;height:112px!important;font-size:25px!important;border-radius:24px!important}
+#gameScreen[data-zone="hom"] .feedback-row{left:119.7%!important;top:-28%!important;width:48%!important}
+#gameScreen[data-zone="hom"] .feedback{min-height:86px!important;font-size:18px!important}
 </style>
 
 
-<style id="g011-scene-first-final-refinement">
-@media(min-width:901px){
-  #gameScreen .game-card{
-    background:rgba(25,48,37,.06)!important;
-    border-color:rgba(255,245,211,.12)!important;
-    box-shadow:none!important;
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;
-  }
+<style id="real-html-zone-complete-final-fix">
+.zone-box{animation:none!important;transform:none!important;opacity:1!important}
+.zone-box #nextZoneBtn{position:fixed!important;z-index:80!important;left:50vw!important;bottom:7.3vh!important;transform:translateX(-50%)!important;width:500px!important;height:115px!important}
+</style>
+
+
+<style id="visual-lock-final">
+/* VISUAL LOCK: connectors stay in gutters/under cards; feedback never covers the live board. */
+#gameScreen .connector{z-index:2!important}
+#gameScreen .cards,#gameScreen .homonym-grid{z-index:3!important}
+#gameScreen .pair-card{z-index:3!important}
+#gameScreen .feedback-row{pointer-events:none}
+#gameScreen .feedback-row .feedback{pointer-events:auto}
+
+@media(max-width:700px){
+ html,body,.app{min-height:100%;overflow-x:hidden!important;background:#214b3b!important}
+ .shell{width:100%!important;height:auto!important;min-height:100vh!important;overflow:visible!important}
+ #startScreen{width:100%!important;height:auto!important;min-height:100vh!important;display:block!important;background:#214b3b!important;overflow:hidden!important}
+ #startScreen::before{background-size:cover!important;opacity:.45}
+ .approved-start-scene{position:relative!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;display:block!important}
+ #startScreen .hero{position:absolute!important;inset:0!important}
+ #startScreen .author-mark{left:10px!important;top:10px!important;width:260px!important;min-height:0!important;font-size:10px!important;padding:7px 10px!important;border-radius:12px!important}
+ #startScreen .cta-row{position:absolute!important;left:50%!important;bottom:18px!important;transform:translateX(-50%)!important}
+ #startScreen #startBtn{min-width:230px!important;font-size:16px!important;padding:12px 16px!important}
+
+ #gameScreen{width:100%!important;height:auto!important;min-height:100vh!important;overflow:hidden!important;background:#214b3b!important;padding:12px 10px 18px!important}
+ #gameScreen::before{inset:0!important;transform:none!important;filter:blur(10px) brightness(.62) saturate(.85)!important;background-size:cover!important;background-position:center!important}
+ .approved-zone-scene{position:absolute!important;inset:0!important;width:100%!important;height:260px!important;object-fit:contain!important;object-position:top center!important;opacity:.58!important;z-index:1!important}
+ #gameScreen .game-card,#gameScreen[data-zone="hom"] .game-card{position:relative!important;z-index:4!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;margin-top:170px!important;padding:10px!important;border-radius:22px!important;background:rgba(34,55,43,.48)!important;box-shadow:0 16px 38px rgba(15,35,27,.24)!important;backdrop-filter:blur(10px) saturate(.9)!important;-webkit-backdrop-filter:blur(10px) saturate(.9)!important}
+ #gameScreen .board-wrap{position:relative!important;inset:auto!important}
+ #gameScreen .board-wrap::before{display:none!important}
+ #gameScreen #board{position:relative!important;inset:auto!important}
+ #gameScreen .cards{height:auto!important;min-height:0!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;gap:9px!important}
+ #gameScreen .pair-card{min-height:88px!important;height:auto!important;font-size:15px!important;padding:9px!important;border-radius:14px!important}
+ #gameScreen .feedback-row,#gameScreen[data-zone="hom"] .feedback-row,#gameScreen[data-zone="ant"] .feedback-row,#gameScreen[data-zone="phr"] .feedback-row{position:relative!important;left:auto!important;top:auto!important;width:100%!important;margin-top:10px!important}
+ #gameScreen .feedback{min-height:50px!important;font-size:12px!important;padding:10px 12px!important;border-radius:16px!important}
+ #gameScreen[data-zone="hom"] .homonym-grid{height:auto!important;grid-template-columns:1fr!important;gap:10px!important}
+ #gameScreen[data-zone="hom"] .word-stack{height:auto!important;grid-template-columns:repeat(3,1fr)!important;grid-template-rows:none!important;gap:7px!important}
+ #gameScreen[data-zone="hom"] .meaning-stack{height:auto!important;grid-template-columns:1fr!important;grid-template-rows:none!important;gap:8px!important}
+ #gameScreen[data-zone="hom"] .h-word{min-height:64px!important}
+ #gameScreen[data-zone="hom"] .composite{min-height:100px!important;height:auto!important}
+ #gameScreen[data-zone="hom"] .double{grid-template-columns:1fr 1fr!important}
+ #gameScreen[data-zone="hom"] .half{min-height:88px!important;padding:15px 5px 6px!important}
+ #gameScreen[data-zone="hom"] .icon{width:42px!important;height:42px!important}
+ #gameScreen[data-zone="hom"] .half b{font-size:8px!important}
+
+ .zone-complete{overflow:auto!important;background:#214b3b!important}
+ .approved-zone-complete-scene{position:relative!important;width:100%!important;height:auto!important;min-height:250px!important;object-fit:contain!important;opacity:.86!important}
+ .zone-box{position:relative!important;left:auto!important;top:auto!important;width:calc(100% - 24px)!important;min-width:0!important;max-width:520px!important;min-height:0!important;margin:-35px auto 22px!important;padding:22px 18px 86px!important;border-radius:22px!important}
+ .zone-box .fragment-big{width:120px!important;height:90px!important;font-size:38px!important}
+ .zone-box h3{font-size:24px!important}.zone-box p{font-size:14px!important}
+ .zone-box #nextZoneBtn{position:absolute!important;left:50%!important;bottom:16px!important;transform:translateX(-50%)!important;width:min(300px,84%)!important;height:56px!important;font-size:16px!important;border-radius:17px!important}
+
+ #finalScreen{width:100%!important;height:auto!important;min-height:100vh!important;overflow:auto!important;background:#214b3b!important;padding-bottom:100px!important}
+ #finalScreen::before{inset:0!important;transform:none!important;filter:blur(10px) brightness(.64)!important;background-size:cover!important}
+ .approved-final-scene{position:relative!important;width:100%!important;height:auto!important;object-fit:contain!important;display:block!important}
+ #finalScreen .final-card{position:relative!important;inset:auto!important;min-height:0!important}
+ #finalScreen .final-actions{position:fixed!important;left:8px!important;right:8px!important;bottom:8px!important;transform:none!important;width:auto!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
+ #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{min-width:0!important;width:auto!important;height:54px!important;min-height:54px!important;font-size:14px!important;border-radius:16px!important}
+ #finalScreen .teacher-facts{position:relative!important;left:auto!important;bottom:auto!important;max-width:none!important;margin:8px 12px 0!important}
 }
-#gameScreen .pair-card{background:linear-gradient(180deg,#fffdf5,#f7ecd9)!important}
+</style>
+
+<style id="visual-lock-mobile-polish">
+@media(max-width:700px){
+  /* Start: preserve the approved 4:3 scene at full width and keep CTA directly attached to it. */
+  #startScreen{min-height:0!important;height:auto!important;padding-bottom:82px!important;background:#214b3b!important}
+  #startScreen::before{display:none!important}
+  .approved-start-scene{position:relative!important;width:100%!important;height:auto!important;object-fit:contain!important}
+  #startScreen .cta-row{bottom:14px!important}
+
+  /* Zone complete: one readable live reward card; the approved scene stays atmospheric, not a duplicate UI. */
+  .zone-complete{min-height:100vh!important;display:grid!important;place-items:center!important;padding:16px!important;background:#214b3b!important}
+  .zone-complete::before{content:""!important;display:block!important;position:absolute!important;inset:0!important;background:url("assets/visual-preview/zone-complete-approved.png") center/cover no-repeat!important;filter:blur(12px) brightness(.58) saturate(.88)!important;transform:scale(1.03)!important;z-index:0!important}
+  .approved-zone-complete-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;opacity:.24!important;filter:blur(1.5px)!important;z-index:1!important}
+  .zone-box{position:relative!important;z-index:4!important;left:auto!important;top:auto!important;width:min(94vw,430px)!important;min-width:0!important;max-width:430px!important;min-height:0!important;margin:0!important;padding:22px 18px 86px!important}
+  .zone-box #nextZoneBtn{position:absolute!important;left:50%!important;bottom:16px!important;transform:translateX(-50%)!important;width:min(300px,84%)!important;height:56px!important}
+
+  /* Final: keep the full approved map uncropped; live controls sit over the baked button strip one-for-one. */
+  #finalScreen{min-height:0!important;height:auto!important;overflow:visible!important;padding:0 0 56px!important;background:#214b3b!important}
+  #finalScreen::before{display:none!important}
+  .approved-final-scene{position:relative!important;display:block!important;width:100%!important;height:auto!important;object-fit:contain!important;opacity:1!important;z-index:1!important}
+  #finalScreen .final-card{position:absolute!important;z-index:4!important;left:0!important;right:0!important;top:0!important;height:calc(100vw * .5625)!important;min-height:0!important;pointer-events:none!important}
+  #finalScreen .final-actions{pointer-events:auto!important;position:absolute!important;left:50%!important;right:auto!important;top:calc(100vw * .5625 * .86)!important;bottom:auto!important;transform:translate(-50%,-50%)!important;width:58vw!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:5px!important}
+  #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{height:34px!important;min-height:34px!important;font-size:9px!important;border-width:2px!important;border-radius:10px!important;padding:3px 6px!important;box-shadow:0 2px 0 rgba(60,70,40,.3)!important}
+  #finalScreen .teacher-facts{pointer-events:auto!important;position:absolute!important;left:8px!important;right:auto!important;top:calc(100vw * .5625 + 6px)!important;bottom:auto!important;max-width:calc(100vw - 16px)!important;margin:0!important}
+  #finalScreen .teacher-facts details{font-size:11px!important}
+}
+</style>
+
+<style id="visual-lock-hidden-guard">
+.zone-complete.hidden{display:none!important}
 </style>
 </head>
 <body>
@@ -436,7 +352,7 @@ html,body{background:#163b42}
   </header>
 
   <main class="shell">
-    <section class="panel" id="startScreen">
+    <section class="panel" id="startScreen"><img class="approved-start-scene" src="assets/visual-preview/start-approved.png" alt="Парк слов, Кнопка и Василий">
       <div class="hero">
         <div class="hero-card">
           <div class="author-mark">Авторская игра Эмилии Леоновой</div>
@@ -456,7 +372,7 @@ html,body{background:#163b42}
       </div>
     </section>
 
-    <section class="panel hidden" id="gameScreen">
+    <section class="panel hidden" id="gameScreen"><img class="approved-zone-scene" id="approvedZoneScene" src="assets/visual-preview/syn-approved.png" alt="Игровая зона Парка слов" aria-hidden="true">
       <div class="progress-strip" id="progressStrip"></div>
       <div class="game-card" id="gameCard">
         <div class="zone-head">
@@ -468,7 +384,7 @@ html,body{background:#163b42}
       </div>
     </section>
 
-    <section class="panel hidden" id="finalScreen">
+    <section class="panel hidden" id="finalScreen"><img class="approved-final-scene" src="assets/visual-preview/final-approved.png" alt="Карта Парка слов собрана" aria-hidden="true">
       <div class="final-card">
         <div class="final-top"><div class="eyebrow">Карта собрана</div><h1>Все 4 части карты собраны. Парк слов открыт!</h1><p>Ты нашёл 12 смысловых пар.</p></div>
         <div class="final-scene">
@@ -486,7 +402,7 @@ html,body{background:#163b42}
   </main>
 </div>
 
-<div class="zone-complete hidden" id="zoneComplete"><div class="zone-box"><div class="fragment-big" id="fragmentIcon">☀</div><div class="zone-kicker">Часть карты найдена</div><h3 id="zoneDoneTitle">Фрагмент карты 1/4 найден.</h3><p id="zoneDoneText">Дорожка на карте стала видна.</p><button class="primary" id="nextZoneBtn" type="button">В следующую зону</button></div></div>
+<div class="zone-complete hidden" id="zoneComplete"><img class="approved-zone-complete-scene" src="assets/visual-preview/zone-complete-approved.png" alt="Завершение зоны" aria-hidden="true"><div class="zone-box"><div class="fragment-big" id="fragmentIcon">☀</div><div class="zone-kicker">Часть карты найдена</div><h3 id="zoneDoneTitle">Фрагмент карты 1/4 найден.</h3><p id="zoneDoneText">Дорожка на карте стала видна.</p><button class="primary" id="nextZoneBtn" type="button">В следующую зону</button></div></div>
 
 <div class="about-modal hidden" id="aboutModal"><div class="about"><button class="ghost about-close" id="aboutClose" type="button">Закрыть</button><h2>Об игре</h2><p><strong>Автор и методический разработчик — Эмилия Леонова.</strong><br>«Кнопка и Василий в Парке слов» — игра на поиск смысловых пар для 4 класса.</p><dl><dt>GAME-ID</dt><dd>G-011</dd><dt>Версия</dt><dd>1.0.0</dd><dt>Режим</dt><dd>word-park-pairs</dd><dt>Банк</dt><dd id="aboutBank">загрузка…</dd><dt>Год</dt><dd>2026</dd><dt>Авторское право</dt><dd>© 2026 Эмилия Леонова</dd></dl></div></div>
 <div class="testbar hidden" id="testbar"><span>ТЕСТОВЫЙ РЕЖИМ — результаты не сохраняются</span><button id="qaPerfect" type="button">Автопрохождение</button><button id="qaReset" type="button">Сброс</button><button id="exitTest" type="button">Выйти из TEST</button></div>
@@ -540,7 +456,7 @@ let currentCards=[];
 function setScreen(id){['startScreen','gameScreen','finalScreen'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo({top:0,left:0,behavior:'instant'})}
 function setFeedback(type,text,who='К'){$('feedback').className='feedback'+(type?' '+type:'');$('feedbackText').textContent=text;$('feedbackFace').textContent=who}
 function renderProgress(){$('progressStrip').innerHTML=ZONES.map((z,i)=>`<div class="piece ${state.completedZones.has(i)?'done':''} ${state.zoneIndex===i&&!state.completedZones.has(i)?'current':''}"><div class="n">${state.completedZones.has(i)?z.icon:(i+1)}</div><div><b>${esc(z.label)}</b><br><span>${state.completedZones.has(i)?'часть карты открыта':`часть ${i+1}/4`}</span></div></div>`).join('')}
-function applyZoneTheme(z){document.documentElement.style.setProperty('--zone',z.color);document.documentElement.style.setProperty('--zoneSoft',z.soft);document.documentElement.style.setProperty('--zoneGlow',z.color+'26');const visual={syn:['scene-synonyms-bg.jpg','cats-synonyms.png'],ant:['scene-antonyms-bg.jpg','cats-antonyms.png'],hom:['scene-homonyms-bg.jpg','cats-homonyms.png'],phr:['scene-idioms-bg.jpg','cats-idioms.png']}[z.id];if(visual){document.documentElement.style.setProperty('--scene-bg',`url("assets/visual/${visual[0]}")`);document.documentElement.style.setProperty('--scene-cats',`url("assets/visual/${visual[1]}")`)}}
+function applyZoneTheme(z){document.documentElement.style.setProperty('--zone',z.color);document.documentElement.style.setProperty('--zoneSoft',z.soft);document.documentElement.style.setProperty('--zoneGlow',z.color+'26');const sceneMap={syn:'syn-approved.png',ant:'ant-approved.png',hom:'hom-approved.png',phr:'phr-approved.png'};const scene=$('approvedZoneScene');if(scene&&sceneMap[z.id])scene.src='assets/visual-preview/'+sceneMap[z.id];$('gameScreen').dataset.zone=z.id}
 function initZoneStats(){ZONES.forEach(z=>state.zoneStats[z.id]={resolvedTasks:0,firstTryCorrect:0,eventualCorrect:0,wrongAttempts:0,corrections:0})}
 function startGame(seed=randSeed()){
  if(!ACTIVE_BANK)return false;bumpRunEpoch();$('zoneComplete').classList.add('hidden');state.runSeed=seed>>>0;ZONES=buildRunZones(state.runSeed);state.zoneIndex=0;state.zoneMatched=new Set();state.selected=null;state.locked=false;state.completedZones=new Set();state.attempts=0;state.resolvedTasks=0;state.firstTryCorrect=0;state.eventualCorrect=0;state.wrongAttempts=0;state.corrections=0;state.pairHadWrong={};state.sessionId=uid();state.startedAt=new Date().toISOString();state.completedAt=null;state.lastResult=null;state.studentCode=isTestMode()?null:loadActiveStudentCode();state.zoneStats={};initZoneStats();$('app').classList.remove('world-lit');setScreen('gameScreen');renderZone();return getRunInfo()
@@ -552,7 +468,7 @@ function markWrong(anchorPair){state.attempts++;state.wrongAttempts++;state.pair
 function resolvePair(pairId,a,b){state.attempts++;state.resolvedTasks++;state.eventualCorrect++;const zs=state.zoneStats[ZONES[state.zoneIndex].id];zs.resolvedTasks++;zs.eventualCorrect++;if(!state.pairHadWrong[pairId]){state.firstTryCorrect++;zs.firstTryCorrect++}else{state.corrections++;zs.corrections++}state.zoneMatched.add(pairId);a.classList.add('matched');b.classList.add('matched');a.disabled=true;b.disabled=true;a.classList.remove('active');b.classList.remove('active');state.selected=null;drawConnection(a,b);$('zoneCounter').textContent=`Найдено ${state.zoneMatched.size} из 3`;setFeedback('success','Пара найдена!',state.zoneIndex%2===0?'В':'К');if(state.zoneMatched.size===PAIRS_PER_ZONE){const token=state.runEpoch;runLater(completeZone,650,token)}}
 function genericClick(card){if(state.locked||card.disabled)return;if(!state.selected){state.selected=card;card.classList.add('active');setFeedback('','Теперь найди смысловую пару.',state.zoneIndex%2===0?'В':'К');return}if(state.selected===card){card.classList.remove('active');state.selected=null;setFeedback('','Выбери карточку. Найди ей смысловую пару и соедини.');return}const first=state.selected;state.locked=true;if(first.dataset.pair===card.dataset.pair){resolvePair(first.dataset.pair,first,card);state.locked=false}else{markWrong(first.dataset.pair);card.classList.add('active','wrong');first.classList.add('wrong');setFeedback('hint','Эти карточки не пара. Попробуй ещё.',state.zoneIndex%2===0?'К':'В');{const token=state.runEpoch;runLater(()=>{first.classList.remove('active','wrong');card.classList.remove('active','wrong');state.selected=null;state.locked=false;setFeedback('','Попробуй ещё: выбери карточку и найди ей смысловую пару.')},620,token)}}}
 function homonymClick(card){if(state.locked||card.disabled)return;if(!state.selected){if(card.dataset.kind!=='word'){card.classList.add('wrong');setFeedback('hint','Сначала выбери слово, для которого ищешь смысловую пару.','К');{const token=state.runEpoch;runLater(()=>card.classList.remove('wrong'),480,token)};return}state.selected=card;card.classList.add('active');setFeedback('','Теперь найди одну карточку, где показаны два разных значения этого слова.','В');return}if(card.dataset.kind==='word'){state.selected.classList.remove('active');state.selected=card;card.classList.add('active');setFeedback('','Теперь найди одну составную карточку с двумя значениями этого слова.','В');return}const first=state.selected;state.locked=true;if(first.dataset.pair===card.dataset.pair){resolvePair(first.dataset.pair,first,card);state.locked=false}else{markWrong(first.dataset.pair);card.classList.add('active','wrong');first.classList.add('wrong');setFeedback('hint','Эти карточки не пара. Попробуй ещё.','К');{const token=state.runEpoch;runLater(()=>{first.classList.remove('active','wrong');card.classList.remove('active','wrong');state.selected=null;state.locked=false;setFeedback('hint','Попробуй ещё: сначала выбери слово.','К')},620,token)}}}
-function drawConnection(a,b){const root=$('boardWrap').getBoundingClientRect(),ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();const x1=ra.left-root.left+ra.width/2,y1=ra.top-root.top+ra.height/2,x2=rb.left-root.left+rb.width/2,y2=rb.top-root.top+rb.height/2,mx=(x1+x2)/2;const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',`M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`);path.dataset.pair=a.dataset.pair;const c1=document.createElementNS('http://www.w3.org/2000/svg','circle');c1.setAttribute('cx',x1);c1.setAttribute('cy',y1);c1.setAttribute('r',7);const c2=document.createElementNS('http://www.w3.org/2000/svg','circle');c2.setAttribute('cx',x2);c2.setAttribute('cy',y2);c2.setAttribute('r',7);const svg=$('connector');svg.setAttribute('viewBox',`0 0 ${root.width} ${root.height}`);svg.setAttribute('width',root.width);svg.setAttribute('height',root.height);svg.append(path,c1,c2)}
+function drawConnection(a,b){const root=$('boardWrap').getBoundingClientRect(),ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();const rel=r=>({left:r.left-root.left,top:r.top-root.top,right:r.right-root.left,bottom:r.bottom-root.top,width:r.width,height:r.height,cx:r.left-root.left+r.width/2,cy:r.top-root.top+r.height/2});const A=rel(ra),B=rel(rb);let x1,y1,x2,y2,d;const isHomonym=a.dataset.kind||b.dataset.kind;if(isHomonym){const word=a.dataset.kind==='word'?A:B,meaning=a.dataset.kind==='meaning'?A:B;x1=word.right;y1=word.cy;x2=meaning.left;y2=meaning.cy;const gapLeft=Math.min(word.right,meaning.left),gapRight=Math.max(word.right,meaning.left),gutter=(gapLeft+gapRight)/2;d=`M ${x1} ${y1} C ${x1+12} ${y1}, ${gutter-12} ${y1}, ${gutter} ${y1} L ${gutter} ${y2} C ${gutter+12} ${y2}, ${x2-12} ${y2}, ${x2} ${y2}`}else{const ca={x:A.cx,y:A.cy},cb={x:B.cx,y:B.cy};function edgePoint(R,from,to){const dx=to.x-from.x,dy=to.y-from.y,ax=Math.abs(dx),ay=Math.abs(dy);if(ax<.001&&ay<.001)return{x:R.cx,y:R.cy};const tx=ax?Math.max(0,R.width/2-2)/ax:Infinity,ty=ay?Math.max(0,R.height/2-2)/ay:Infinity,t=Math.min(tx,ty);return{x:R.cx+dx*t,y:R.cy+dy*t}}const p1=edgePoint(A,ca,cb),p2=edgePoint(B,cb,ca);x1=p1.x;y1=p1.y;x2=p2.x;y2=p2.y;const mx=(x1+x2)/2;d=`M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`}const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',d);path.dataset.pair=a.dataset.pair;const c1=document.createElementNS('http://www.w3.org/2000/svg','circle');c1.setAttribute('cx',x1);c1.setAttribute('cy',y1);c1.setAttribute('r',7);const c2=document.createElementNS('http://www.w3.org/2000/svg','circle');c2.setAttribute('cx',x2);c2.setAttribute('cy',y2);c2.setAttribute('r',7);const svg=$('connector');svg.setAttribute('viewBox',`0 0 ${root.width} ${root.height}`);svg.setAttribute('width',root.width);svg.setAttribute('height',root.height);svg.append(path,c1,c2)}
 function redrawConnections(){if($('gameScreen').classList.contains('hidden'))return;const matched=[...$('board').querySelectorAll('.pair-card.matched')];$('connector').innerHTML='';const groups={};matched.forEach(c=>(groups[c.dataset.pair]??=[]).push(c));Object.values(groups).forEach(g=>{if(g.length===2)drawConnection(g[0],g[1])})}
 function completeZone(){if(state.completedZones.has(state.zoneIndex))return;state.completedZones.add(state.zoneIndex);renderProgress();$('fragmentIcon').textContent=ZONES[state.zoneIndex].icon;$('zoneDoneTitle').textContent=`Фрагмент карты ${state.zoneIndex+1}/4 найден.`;$('zoneDoneText').textContent=state.zoneIndex===3?'Все четыре части карты готовы соединиться.':'На карте появилась новая дорожка.';$('nextZoneBtn').textContent=state.zoneIndex===3?'Открыть Парк слов':'В следующую зону';$('zoneComplete').classList.remove('hidden');$('app').classList.add('world-lit')}
 function nextZone(){$('zoneComplete').classList.add('hidden');if(state.zoneIndex===3){showFinal();return}state.zoneIndex++;renderZone();window.scrollTo({top:0,left:0,behavior:'instant'})}
