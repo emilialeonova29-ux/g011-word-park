@@ -1,4 +1,4 @@
-G-011 FINAL QA — SYSTEM VISUAL FIX
+G-011 FINAL QA — REUSABLE MATCHING TEMPLATE
 
 Identity:
 GAME-ID: G-011
@@ -7,30 +7,26 @@ BANK-ID: BANK-01
 bankVersion: v1
 
 VISUAL QA PASSED
-- Start screen unchanged from visual lock.
-- Gameplay scenic layer contains environment/cats only; no baked runtime UI.
-- Dynamic zone name, instruction, cards, progress, feedback, zone-complete text/buttons and final results/actions are DOM-only.
-- No duplicate gameplay/final UI layers.
-- Progress checked through 1/4 -> 2/4 -> 3/4 -> 4/4.
-- Zone names checked: Синонимы -> Антонимы -> Омонимы -> Фразеологизмы.
-- Wrong/correct states checked.
-- Homonym connector endpoints attach to outer card edges and do not cross composite-card content.
-- Zone complete checked at 1/4, 2/4, 3/4, 4/4.
-- Final screen checked with one set of live actions.
-- Desktop 1280x850 passed.
-- Mobile 390x844 passed.
-- Mobile 320x568 passed.
-- Horizontal overflow = 0 at all tested viewports.
+- Approved reusable start/gameplay/overlay layout preserved.
+- Approved Knopka/Vasiliy character identity used on start, gameplay and final.
+- Same gameplay shell applied to Synonyms / Antonyms / Homonyms / Phraseologisms.
+- Legacy zone-specific scenic positioning neutralized by template CSS only.
+- Homonym board uses the same shell and remains interactive/readable.
+- Zone-complete uses one reusable DOM overlay.
+- Final uses the same UI system.
+- Desktop 1280x850: horizontal overflow = 0.
+- Mobile 390x844: horizontal overflow = 0.
+- Mobile 320x568: horizontal overflow = 0.
 
 TECH QA PASSED
-- runtime/page errors = 0
-- console errors = 0
-- BANK validation = 3+3+3+3, 12 pairs
-- TEST perfect run = 12/12
-- TEST rewards = [] / collectionItemsUnlocked = [] / xpEarned = 0
-- student perfect run = 12/12 and word-park-map reward
-- replay starts fresh sessionId and fresh seed
-- timer invalidation markers preserved: runEpoch / bumpRunEpoch / runLater / token-guard / clearSessionState epoch bump
+- Full 4-zone run reaches final.
+- Resolved tasks = 12; completed = true.
+- Wrong feedback checked.
+- Zone transitions 1/4 -> 2/4 -> 3/4 -> 4/4 checked.
+- Runtime/page errors = 0.
+- JS runtime logic is byte-identical to accepted connector-fallback baseline.
+- BANK/content files unchanged.
+- Timer invalidation logic preserved.
 
 UNCHANGED
-CONTENT / BANK / mechanics / loader / normalized result contract / storage+replay / timer hotfix.
+CONTENT / BANK / mechanics / result contract / storage-replay / timer hotfix.

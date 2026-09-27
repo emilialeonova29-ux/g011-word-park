@@ -1,0 +1,13 @@
+/* G-011 Word Park visual pack.
+   No layout and no dynamic content live here: only palette/decorative identity. */
+:root{
+  --mt-scene-top:#c9efff;
+  --mt-scene-mid:#8fcf92;
+  --mt-scene-bottom:#e6c27b;
+  --mt-accent:#2f8b63;
+  --mt-accent-2:#65bc77;
+}
+#gameScreen[data-zone="syn"]{--zone:#2f8c65}
+#gameScreen[data-zone="ant"]{--zone:#7068b8}
+#gameScreen[data-zone="hom"]{--zone:#3c7fa7}
+#gameScreen[data-zone="phr"]{--zone:#ca7059}

@@ -1,6 +1,24 @@
-G-011 VISUAL ARCHITECTURE LOCK
+G-011 REUSABLE MATCHING TEMPLATE — VISUAL LOCK
 
-scenic layer = environment / decoration / cats only
-runtime DOM = zone name / instruction / cards / progress / feedback / zone-complete / buttons / final results/actions
+LOCKED LAYOUT
+- one stable start layout
+- one stable gameplay layout
+- one universal DOM overlay for zone complete
+- final uses the same UI language
 
-The visual implementation intentionally contains no baked gameplay/final runtime UI assets. This prevents stale 1/4/zone labels, duplicate feedback/buttons, and zone mismatch regressions.
+SCENIC / VISUAL PACK
+- decorative environment only
+- palette / decor / frames / micro-story
+- approved Knopka & Vasiliy identity
+- no baked runtime text, cards, progress, feedback, instructions, results or buttons
+
+RUNTIME DOM
+- zone title / instruction
+- cards / homonym composite cards
+- progress / counters
+- wrong + correct feedback
+- zone complete text + action
+- final results + actions
+
+REUSE RULE
+Future matching games reuse the template by changing BANK + visual pack while keeping the layout/core mechanics stable.

@@ -1,0 +1,309 @@
+/* G-011 reusable matching-template preview
+   Template owns layout, interaction surfaces and responsive behavior.
+   Visual pack may change palette/decor/cats only. */
+:root{
+  --mt-ink:#17354a;
+  --mt-muted:#607584;
+  --mt-paper:#fffaf0;
+  --mt-paper-2:#fff4d9;
+  --mt-line:#d8bf8b;
+  --mt-accent:#2f8b63;
+  --mt-accent-2:#62b978;
+  --mt-danger:#d95345;
+  --mt-shadow:0 18px 48px rgba(26,53,50,.18);
+  --mt-radius:26px;
+  --mt-scene-top:#bfeafa;
+  --mt-scene-mid:#8fcf9c;
+  --mt-scene-bottom:#e6c67e;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#dff2e8!important;color:var(--mt-ink)!important}
+body{overflow-x:hidden!important}
+.app{
+  min-height:100vh!important;overflow:hidden!important;
+  background:
+    radial-gradient(circle at 8% 18%,rgba(255,255,255,.72) 0 3%,transparent 13%),
+    radial-gradient(circle at 90% 12%,rgba(255,244,179,.55) 0 3%,transparent 14%),
+    linear-gradient(180deg,var(--mt-scene-top) 0 38%,var(--mt-scene-mid) 38% 72%,var(--mt-scene-bottom) 72% 100%)!important;
+}
+.app::before{
+  content:""!important;position:absolute!important;inset:0!important;pointer-events:none!important;opacity:.9!important;
+  background:
+    radial-gradient(ellipse at 2% 90%,#4d9d65 0 11%,transparent 12%),
+    radial-gradient(ellipse at 10% 95%,#75bb6f 0 15%,transparent 16%),
+    radial-gradient(ellipse at 98% 90%,#4f9f67 0 12%,transparent 13%),
+    radial-gradient(ellipse at 90% 96%,#76bb72 0 17%,transparent 18%),
+    linear-gradient(90deg,transparent 0 11%,rgba(53,95,64,.16) 11% 12%,transparent 12% 88%,rgba(53,95,64,.16) 88% 89%,transparent 89%);
+}
+.cloud,.park-path,.tree,.lamp{display:none!important}
+.header{
+  z-index:40!important;max-width:1180px!important;margin:0 auto!important;padding:16px 20px 0!important;
+}
+.brand{background:rgba(255,250,234,.88)!important;border:1px solid rgba(255,255,255,.75)!important;border-radius:18px!important;padding:8px 12px!important;box-shadow:0 8px 24px rgba(34,65,54,.10)!important;backdrop-filter:blur(10px)!important}
+.brand-badge{background:linear-gradient(145deg,#efb748,#d47a3e)!important;border-radius:12px!important;width:38px!important;height:38px!important}
+.top-actions .ghost{background:rgba(255,250,234,.88)!important;border:1px solid rgba(255,255,255,.78)!important;color:#365566!important}
+.shell{z-index:10!important;max-width:1180px!important;margin:14px auto 0!important;padding:0 20px 34px!important}
+.panel{animation:none!important}
+#startScreen.hidden,#gameScreen.hidden,#finalScreen.hidden{display:none!important}
+
+/* START — same template language: mission panel + decorative visual pack stage. */
+#startScreen{position:relative!important;min-height:720px!important}
+#startScreen>.approved-start-scene{display:none!important}
+#startScreen .hero{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(360px,.82fr)!important;gap:22px!important;align-items:stretch!important;min-height:690px!important;padding:0!important}
+#startScreen .hero-card,
+#startScreen .scene-card{
+  border-radius:var(--mt-radius)!important;border:1px solid rgba(255,255,255,.84)!important;box-shadow:var(--mt-shadow)!important;
+}
+#startScreen .hero-card{
+  align-self:center!important;padding:38px!important;background:rgba(255,250,238,.94)!important;backdrop-filter:blur(12px)!important;
+}
+#startScreen .author-mark{background:#e9f5e9!important;color:#3d7659!important}
+#startScreen .author-series{color:#70808b!important;font-size:12px!important;font-weight:750!important;margin-top:8px!important}
+#startScreen h1{font-size:clamp(44px,5.3vw,68px)!important;line-height:.98!important;color:#17384d!important;margin:18px 0 14px!important}
+#startScreen p{max-width:650px!important;color:#526a77!important;font-size:18px!important;line-height:1.52!important}
+#startScreen .instruction{background:#f3ead4!important;border:1px solid #e4d2a8!important;color:#365c52!important;border-radius:16px!important;margin:22px 0!important}
+#startScreen .primary{min-height:56px!important;padding:14px 24px!important;border-radius:16px!important;background:linear-gradient(180deg,var(--mt-accent-2),var(--mt-accent))!important;box-shadow:0 6px 0 #24704f,0 12px 24px rgba(37,102,73,.18)!important;font-size:17px!important}
+#startScreen .scene-card{
+  min-height:690px!important;position:relative!important;overflow:hidden!important;
+  background:
+    radial-gradient(circle at 78% 14%,rgba(255,239,156,.72) 0 6%,transparent 17%),
+    radial-gradient(ellipse at 50% 110%,#5da966 0 31%,transparent 32%),
+    radial-gradient(ellipse at 18% 93%,#77bb74 0 27%,transparent 28%),
+    radial-gradient(ellipse at 88% 90%,#6caf6c 0 28%,transparent 29%),
+    linear-gradient(180deg,#c9eeff 0 45%,#a5d78d 45% 100%)!important;
+}
+#startScreen .scene-card::before{
+  content:"";position:absolute;left:50%;bottom:-80px;transform:translateX(-50%);width:300px;height:520px;border-radius:48% 48% 0 0;
+  background:linear-gradient(180deg,#f3dea5,#d4b36d);box-shadow:0 0 0 7px rgba(255,255,255,.13)
+}
+#startScreen .scene-sun{display:block!important;right:42px!important;top:38px!important;width:72px!important;height:72px!important;background:#ffe28a!important}
+#startScreen .scene-hill{display:none!important}
+#startScreen .gate{left:50%!important;bottom:210px!important;width:220px!important;height:220px!important;transform:translateX(-50%)!important}
+#startScreen .map-preview{left:28px!important;top:34px!important;grid-template-columns:repeat(2,72px)!important;gap:8px!important;transform:none!important}
+#startScreen .map-tile{height:70px!important;background:rgba(255,247,219,.94)!important;border:2px solid #c89a58!important;color:#21455a!important;box-shadow:0 6px 14px rgba(53,68,45,.12)!important}
+#startScreen .characters{left:50%!important;bottom:18px!important;transform:translateX(-50%)!important;width:94%!important;justify-content:center!important}
+#startScreen .characters img{display:block!important;width:min(520px,92%)!important;height:auto!important;border-radius:0!important;filter:drop-shadow(0 16px 18px rgba(27,61,45,.22))!important}
+
+/* GAME — one stable matching layout for every zone and visual pack. */
+#gameScreen{
+  position:relative!important;min-height:720px!important;padding:18px!important;border-radius:var(--mt-radius)!important;overflow:hidden!important;
+  background:rgba(255,250,235,.34)!important;border:1px solid rgba(255,255,255,.70)!important;box-shadow:var(--mt-shadow)!important;backdrop-filter:blur(5px)!important;
+}
+#gameScreen::before{
+  display:block!important;content:""!important;position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important;
+  background:
+    radial-gradient(circle at 93% 12%,rgba(255,240,160,.40) 0 6%,transparent 18%),
+    radial-gradient(ellipse at 102% 100%,rgba(57,132,73,.50) 0 25%,transparent 26%),
+    radial-gradient(ellipse at -5% 102%,rgba(71,143,78,.44) 0 24%,transparent 25%),
+    linear-gradient(180deg,rgba(196,237,250,.82) 0 36%,rgba(129,190,128,.70) 36% 100%)!important;
+}
+#gameScreen::after{display:none!important}
+.approved-zone-scene{display:none!important}
+#gameScreen .progress-strip{
+  position:relative!important;z-index:3!important;left:auto!important;top:auto!important;width:100%!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:10px!important;margin:0 0 14px!important;
+}
+#gameScreen .piece{
+  min-height:58px!important;display:flex!important;align-items:center!important;gap:8px!important;padding:8px 10px!important;border-radius:16px!important;
+  background:rgba(255,250,236,.90)!important;border:1px solid #e1cfaa!important;color:#355366!important;box-shadow:0 6px 16px rgba(37,60,47,.08)!important;
+}
+#gameScreen .piece .n{width:32px!important;height:32px!important;border-radius:10px!important;background:#e8ddc0!important;color:#54706f!important;font-size:13px!important}
+#gameScreen .piece b{font-size:12px!important;color:#25465a!important}#gameScreen .piece span{font-size:10px!important;color:#7b8a91!important}
+#gameScreen .piece.current{outline:3px solid color-mix(in srgb,var(--zone) 42%,transparent)!important;background:#fffaf0!important}
+#gameScreen .piece.done{background:#e5f4e7!important;border-color:#b9d9bb!important}.piece.done .n{background:#71b978!important;color:white!important}
+#gameScreen .game-card{
+  position:relative!important;z-index:2!important;left:auto!important;right:auto!important;top:auto!important;width:100%!important;height:auto!important;min-height:600px!important;margin:0!important;padding:18px!important;
+  display:grid!important;grid-template-columns:minmax(0,1fr) 260px!important;grid-template-rows:auto 1fr!important;gap:16px!important;
+  background:rgba(255,250,238,.93)!important;border:1px solid rgba(255,255,255,.88)!important;border-radius:22px!important;box-shadow:none!important;backdrop-filter:blur(11px)!important;
+}
+#gameScreen .game-card::before,#gameScreen .game-card::after{display:none!important}
+#gameScreen .zone-head{
+  grid-column:1/-1!important;display:grid!important;grid-template-columns:1fr auto!important;align-items:center!important;gap:12px!important;position:relative!important;width:auto!important;margin:0!important;padding:14px 16px!important;text-align:left!important;
+  border:1px solid #e0cfa8!important;border-radius:18px!important;background:#fff7e2!important;box-shadow:none!important;
+}
+#gameScreen .zone-kicker{font-size:11px!important;letter-spacing:.04em!important;color:#71818a!important;text-transform:uppercase!important;font-weight:900!important}
+#gameScreen .zone-head h2{font-size:26px!important;margin:2px 0 4px!important;color:#17394f!important}.zone-rule{font-size:15px!important;color:#4f6876!important;font-weight:760!important}
+#gameScreen .zone-counter{position:static!important;padding:9px 13px!important;border-radius:13px!important;background:#eef5e9!important;border:1px solid #c9dec1!important;color:#326550!important;box-shadow:none!important;font-weight:900!important;white-space:nowrap!important}
+#gameScreen .board-wrap{
+  grid-column:1!important;grid-row:2!important;position:relative!important;z-index:3!important;width:auto!important;margin:0!important;padding:14px!important;border-radius:20px!important;min-height:420px!important;
+  background:rgba(247,242,225,.72)!important;border:1px solid #e2d4b5!important;backdrop-filter:none!important;
+}
+#gameScreen .board-wrap::before{display:none!important}
+#gameScreen .cards{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:1fr!important;gap:14px!important;min-height:390px!important;align-content:stretch!important}
+#gameScreen .pair-card{
+  min-height:110px!important;padding:14px 16px!important;border-radius:17px!important;background:#fffdf8!important;border:2px solid #d5b987!important;color:#17364e!important;box-shadow:0 6px 0 #c8a873,0 12px 20px rgba(42,55,39,.08)!important;font-size:20px!important;font-weight:900!important;transition:.14s transform,.14s border-color,.14s box-shadow!important;
+}
+#gameScreen .pair-card:hover{transform:translateY(-2px)!important}
+#gameScreen .pair-card.active{border-color:var(--zone)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--zone) 18%,transparent),0 6px 0 color-mix(in srgb,var(--zone) 62%,#b48b54)!important}
+#gameScreen .pair-card.matched{background:#f2fbef!important;border-color:#69b65e!important;box-shadow:0 0 0 3px rgba(104,183,93,.18),0 6px 0 #77a968!important}
+#gameScreen .pair-card.wrong{background:#fff4ef!important;border-color:#d95a49!important;box-shadow:0 0 0 3px rgba(217,90,73,.15),0 6px 0 #bd6a5f!important}
+#gameScreen .feedback-row{
+  grid-column:2!important;grid-row:2!important;position:relative!important;right:auto!important;left:auto!important;top:auto!important;width:auto!important;margin:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-end!important;gap:12px!important;min-height:420px!important;pointer-events:none!important;
+}
+#gameScreen .feedback-row .zone-characters{display:block!important;order:2!important;width:100%!important;max-width:250px!important;height:auto!important;filter:drop-shadow(0 14px 14px rgba(37,64,48,.20))!important}
+#gameScreen .feedback-row .feedback{
+  order:1!important;width:100%!important;min-height:96px!important;margin:0!important;padding:14px 15px!important;border-radius:18px!important;background:#edf6e9!important;border:1px solid #c5ddbd!important;color:#315847!important;box-shadow:none!important;font-size:14px!important;line-height:1.35!important;pointer-events:auto!important;
+}
+#gameScreen .feedback-row .feedback.hint{background:#fff0e9!important;border-color:#e5b5a6!important;color:#9c493d!important;box-shadow:none!important}
+#gameScreen .feedback-row .face{display:inline-grid!important;width:28px!important;height:28px!important;border-radius:9px!important;background:#d9ead2!important;color:#35654f!important;place-items:center!important;margin-right:8px!important}
+#gameScreen .connector{z-index:6!important;pointer-events:none!important}
+#gameScreen .connector path{stroke:#5fbd5a!important;stroke-width:5!important;fill:none!important;filter:drop-shadow(0 0 4px rgba(87,181,83,.34))!important}
+#gameScreen .connector circle{fill:#fffef7!important;stroke:#57aa54!important;stroke-width:4!important}
+
+/* Homonyms keep the same shell; only the board's internal matching shape differs. */
+#gameScreen .homonym-grid{display:grid!important;grid-template-columns:.72fr 1.28fr!important;gap:14px!important;min-height:390px!important;height:auto!important}
+#gameScreen .word-stack,#gameScreen .meaning-stack{display:grid!important;grid-template-rows:repeat(3,1fr)!important;gap:12px!important;height:100%!important}
+#gameScreen .h-word,#gameScreen .composite{min-height:0!important;height:100%!important}.composite{padding:10px!important}.double{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}.half{padding:19px 8px 8px!important;gap:7px!important}.icon{width:54px!important;height:54px!important}.double-label{background:#315f74!important;color:white!important}
+
+/* Universal overlay — same shell for every zone-complete and later final state. */
+.zone-complete{
+  position:fixed!important;inset:0!important;z-index:100!important;display:grid!important;place-items:center!important;padding:20px!important;background:rgba(25,49,40,.48)!important;backdrop-filter:blur(8px)!important;overflow:auto!important;
+}
+.zone-complete.hidden{display:none!important}.approved-zone-complete-scene{display:none!important}.zone-complete::before{display:none!important}
+.zone-box{
+  position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:min(560px,94vw)!important;min-width:0!important;max-width:560px!important;min-height:0!important;padding:30px!important;display:grid!important;justify-items:center!important;gap:8px!important;
+  border-radius:24px!important;background:#fff8e7!important;border:1px solid #dfc89b!important;box-shadow:0 24px 70px rgba(19,39,31,.32)!important;text-align:center!important;
+}
+.zone-box .fragment-big{width:96px!important;height:96px!important;margin:0 0 5px!important;border-radius:24px!important;display:grid!important;place-items:center!important;background:#eaf4e5!important;border:1px solid #c6ddbe!important;color:#34644d!important;font-size:38px!important}
+.zone-box h3{font-size:30px!important;line-height:1.12!important;margin:4px 0!important;color:#173b51!important}.zone-box p{font-size:16px!important;color:#60717b!important;margin:0 0 16px!important}
+.zone-box #nextZoneBtn{position:static!important;left:auto!important;bottom:auto!important;transform:none!important;width:auto!important;height:auto!important;min-width:220px!important;min-height:54px!important;font-size:16px!important;border-radius:15px!important;background:linear-gradient(180deg,var(--mt-accent-2),var(--mt-accent))!important;border:0!important;box-shadow:0 5px 0 #267150!important}
+
+/* FINAL uses exactly the same UI language, not a separate art scene. */
+#finalScreen{
+  position:relative!important;width:auto!important;height:auto!important;min-height:720px!important;overflow:visible!important;padding:18px!important;border-radius:var(--mt-radius)!important;background:rgba(255,250,235,.36)!important;box-shadow:var(--mt-shadow)!important;
+}
+#finalScreen::before{display:block!important;content:""!important;position:absolute!important;inset:0!important;z-index:0!important;border-radius:inherit!important;background:linear-gradient(180deg,rgba(199,236,248,.75),rgba(126,188,126,.66))!important}
+.approved-final-scene{display:none!important}
+#finalScreen .final-card{position:relative!important;z-index:2!important;inset:auto!important;min-height:680px!important;padding:28px!important;border-radius:22px!important;background:rgba(255,250,238,.94)!important;border:1px solid rgba(255,255,255,.86)!important;box-shadow:none!important}
+#finalScreen .final-top{display:block!important;text-align:center!important}.final-top h1{font-size:40px!important;color:#173b51!important}.final-top p{font-size:17px!important;color:#64747c!important}
+#finalScreen .final-scene{display:grid!important;place-items:center!important;min-height:330px!important;margin:20px auto!important;border-radius:20px!important;background:#eef4e7!important;border:1px solid #d0dec5!important;overflow:hidden!important}
+#finalScreen .final-map{display:grid!important}.final-gate{display:block!important}.final-characters{display:flex!important}.final-characters img{display:block!important;max-width:300px!important;height:auto!important}
+#finalScreen .final-actions{position:static!important;transform:none!important;width:auto!important;display:flex!important;justify-content:center!important;gap:12px!important;margin:18px 0!important}.final-actions .primary,.final-actions .secondary{min-width:180px!important;min-height:52px!important;height:auto!important;font-size:15px!important;border-radius:15px!important}
+#finalScreen .teacher-facts{position:static!important;max-width:760px!important;margin:12px auto 0!important}
+
+@media(max-width:860px){
+  #startScreen .hero{grid-template-columns:1fr!important;min-height:0!important}.scene-card{min-height:520px!important}
+  #gameScreen .game-card{grid-template-columns:1fr!important}.feedback-row{grid-column:1!important;min-height:0!important;display:grid!important;grid-template-columns:1fr 160px!important;align-items:end!important}.feedback-row .zone-characters{max-width:160px!important}.feedback-row .feedback{min-height:70px!important}
+}
+@media(max-width:700px){
+  .header{padding:10px 10px 0!important}.shell{padding:0 8px 20px!important}.brand small{display:none!important}
+  #startScreen{min-height:0!important}#startScreen .hero-card{padding:24px!important}#startScreen .scene-card{min-height:420px!important}.map-preview{transform:scale(.85)!important;transform-origin:top left!important}
+  #gameScreen{padding:9px!important;min-height:0!important}.progress-strip{gap:5px!important}.piece{min-height:46px!important;padding:5px!important}.piece b{font-size:8px!important}.piece span{display:none!important}.piece .n{width:25px!important;height:25px!important}
+  #gameScreen .game-card{padding:9px!important;gap:9px!important;min-height:0!important}.zone-head{grid-template-columns:1fr!important;padding:10px!important}.zone-head h2{font-size:20px!important}.zone-rule{font-size:12px!important}.zone-counter{justify-self:start!important;padding:6px 9px!important;font-size:11px!important}
+  #gameScreen .board-wrap{padding:8px!important;min-height:0!important}.cards{gap:8px!important;min-height:0!important}.pair-card{min-height:86px!important;padding:8px!important;font-size:15px!important;border-radius:12px!important}
+  #gameScreen .feedback-row{grid-template-columns:1fr 128px!important;gap:6px!important}.feedback-row .zone-characters{max-width:128px!important}.feedback-row .feedback{min-height:58px!important;padding:9px!important;font-size:11px!important}
+  #gameScreen .homonym-grid{grid-template-columns:1fr!important;min-height:0!important}.word-stack{grid-template-columns:repeat(3,1fr)!important;grid-template-rows:none!important}.h-word{min-height:60px!important}.composite{min-height:104px!important}.meaning-stack{grid-template-rows:none!important}.half{padding:16px 4px 4px!important}.icon{width:42px!important;height:42px!important}
+  .zone-box{padding:22px!important}.zone-box h3{font-size:25px!important}.zone-box .fragment-big{width:82px!important;height:82px!important}
+  #finalScreen{padding:9px!important;min-height:0!important}.final-card{padding:16px!important;min-height:0!important}.final-top h1{font-size:28px!important}.final-scene{min-height:270px!important}.final-actions{flex-wrap:wrap!important}.final-actions button{flex:1 1 150px!important}
+}
+
+/* Hard reset of legacy scenic positioning from the pre-template implementation. */
+.header{display:flex!important;position:relative!important;left:auto!important;right:auto!important;top:auto!important}
+#startScreen{
+  width:100%!important;height:auto!important;min-height:720px!important;aspect-ratio:auto!important;display:block!important;background:transparent!important;overflow:visible!important;padding:0!important
+}
+#startScreen::before{display:none!important}
+#startScreen .hero{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(360px,.82fr)!important;gap:22px!important;align-items:stretch!important;min-height:690px!important;padding:0!important;z-index:auto!important}
+#startScreen .hero-card{position:relative!important;inset:auto!important;width:auto!important;max-width:none!important;padding:38px!important;background:rgba(255,250,238,.94)!important;border:1px solid rgba(255,255,255,.84)!important;box-shadow:var(--mt-shadow)!important;backdrop-filter:blur(12px)!important;z-index:auto!important}
+#startScreen .author-mark{position:static!important;display:inline-flex!important;width:auto!important;min-height:0!important;padding:7px 11px!important;font-size:11px!important;line-height:1.2!important;text-align:left!important;box-shadow:none!important;background:#e9f5e9!important;border:0!important}
+#startScreen .author-series{display:block!important}
+#startScreen h1,#startScreen p,#startScreen .instruction{display:flex!important}
+#startScreen h1{display:block!important}
+#startScreen p{display:block!important}
+#startScreen .cta-row{position:static!important;left:auto!important;bottom:auto!important;transform:none!important;margin:0!important}
+#startScreen #startBtn{min-width:0!important;font-size:17px!important;padding:14px 24px!important;border-width:0!important;border-radius:16px!important}
+#startScreen .bank-status{position:static!important;transform:none!important;width:auto!important;max-width:none!important;margin-top:10px!important}
+#startScreen .scene-card{display:block!important}
+
+#gameScreen{
+  width:100%!important;height:auto!important;min-height:720px!important;aspect-ratio:auto!important;display:block!important;overflow:hidden!important
+}
+#gameScreen.hidden{display:none!important}
+#gameScreen .game-card{box-sizing:border-box!important;max-width:100%!important;overflow:hidden!important}
+#gameScreen .board-wrap{min-width:0!important;overflow:visible!important}
+#gameScreen .feedback-row{min-width:0!important;overflow:hidden!important}
+#gameScreen .feedback-row .zone-characters{object-fit:contain!important}
+#gameScreen .zone-head{min-width:0!important;overflow:hidden!important}
+#gameScreen .zone-counter{max-width:180px!important;overflow:hidden!important;text-overflow:ellipsis!important}
+
+@media(max-width:860px){
+  #startScreen{min-height:0!important}
+  #startScreen .hero{grid-template-columns:1fr!important;min-height:0!important}
+  #startScreen .hero-card{padding:28px!important}
+}
+@media(max-width:700px){
+  .header{display:flex!important}
+  #startScreen .hero-card{padding:22px!important}
+}
+
+/* VISUAL LOCK PROPAGATION
+   Neutralize legacy zone-specific scenic positioning so the approved reusable
+   matching layout is identical across all four zones. No mechanics/content change. */
+#gameScreen[data-zone="syn"] .game-card,
+#gameScreen[data-zone="ant"] .game-card,
+#gameScreen[data-zone="hom"] .game-card,
+#gameScreen[data-zone="phr"] .game-card{
+  position:relative!important;left:auto!important;right:auto!important;top:auto!important;
+  width:100%!important;height:auto!important;min-height:600px!important;margin:0!important;
+  padding:18px!important;display:grid!important;grid-template-columns:minmax(0,1fr) 260px!important;
+  grid-template-rows:auto 1fr!important;gap:16px!important;background:rgba(255,250,238,.93)!important;
+  border:1px solid rgba(255,255,255,.88)!important;border-radius:22px!important;box-shadow:none!important;
+  backdrop-filter:blur(11px)!important;overflow:hidden!important;
+}
+#gameScreen[data-zone="syn"] .feedback-row,
+#gameScreen[data-zone="ant"] .feedback-row,
+#gameScreen[data-zone="hom"] .feedback-row,
+#gameScreen[data-zone="phr"] .feedback-row{
+  grid-column:2!important;grid-row:2!important;position:relative!important;left:auto!important;right:auto!important;top:auto!important;
+  width:auto!important;margin:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:flex-end!important;gap:12px!important;min-height:420px!important;overflow:hidden!important;pointer-events:none!important;
+}
+#gameScreen[data-zone="hom"] .board-wrap::before{display:none!important}
+#gameScreen[data-zone="hom"] .homonym-grid{
+  display:grid!important;grid-template-columns:minmax(150px,.72fr) minmax(0,1.28fr)!important;gap:14px!important;
+  min-height:390px!important;height:auto!important;
+}
+#gameScreen[data-zone="hom"] .homonym-grid>div>.zone-kicker{display:block!important}
+#gameScreen[data-zone="hom"] .word-stack,
+#gameScreen[data-zone="hom"] .meaning-stack{
+  display:grid!important;grid-template-columns:1fr!important;grid-template-rows:repeat(3,minmax(0,1fr))!important;
+  gap:12px!important;height:100%!important;min-width:0!important;
+}
+#gameScreen[data-zone="hom"] .h-word,
+#gameScreen[data-zone="hom"] .composite{min-height:0!important;height:100%!important;min-width:0!important}
+#gameScreen[data-zone="hom"] .composite{padding:10px!important}
+#gameScreen[data-zone="hom"] .double{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;height:auto!important}
+#gameScreen[data-zone="hom"] .half{padding:19px 8px 8px!important;gap:7px!important;min-width:0!important}
+#gameScreen[data-zone="hom"] .icon{width:54px!important;height:54px!important;flex:0 0 auto!important}
+#gameScreen[data-zone="hom"] .half b{font-size:10px!important;margin-top:4px!important;max-width:100%!important}
+#gameScreen[data-zone="hom"] .double-label{top:6px!important;font-size:8px!important}
+
+@media(max-width:860px){
+  #gameScreen[data-zone="syn"] .game-card,
+  #gameScreen[data-zone="ant"] .game-card,
+  #gameScreen[data-zone="hom"] .game-card,
+  #gameScreen[data-zone="phr"] .game-card{grid-template-columns:1fr!important}
+  #gameScreen[data-zone="syn"] .feedback-row,
+  #gameScreen[data-zone="ant"] .feedback-row,
+  #gameScreen[data-zone="hom"] .feedback-row,
+  #gameScreen[data-zone="phr"] .feedback-row{
+    grid-column:1!important;grid-row:auto!important;display:grid!important;grid-template-columns:1fr 160px!important;
+    align-items:end!important;min-height:0!important;width:auto!important;margin:0!important;
+  }
+}
+@media(max-width:700px){
+  #gameScreen[data-zone="syn"] .game-card,
+  #gameScreen[data-zone="ant"] .game-card,
+  #gameScreen[data-zone="hom"] .game-card,
+  #gameScreen[data-zone="phr"] .game-card{padding:9px!important;gap:9px!important;min-height:0!important}
+  #gameScreen[data-zone="syn"] .feedback-row,
+  #gameScreen[data-zone="ant"] .feedback-row,
+  #gameScreen[data-zone="hom"] .feedback-row,
+  #gameScreen[data-zone="phr"] .feedback-row{grid-template-columns:1fr 128px!important;gap:6px!important}
+  #gameScreen[data-zone="hom"] .homonym-grid{grid-template-columns:1fr!important;gap:8px!important;min-height:0!important}
+  #gameScreen[data-zone="hom"] .word-stack{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:none!important;gap:8px!important;height:auto!important}
+  #gameScreen[data-zone="hom"] .meaning-stack{grid-template-columns:1fr!important;grid-template-rows:none!important;gap:8px!important;height:auto!important}
+  #gameScreen[data-zone="hom"] .h-word{min-height:62px!important;height:auto!important}
+  #gameScreen[data-zone="hom"] .composite{min-height:102px!important;height:auto!important}
+  #gameScreen[data-zone="hom"] .half{padding:16px 4px 4px!important}
+  #gameScreen[data-zone="hom"] .icon{width:42px!important;height:42px!important}
+}

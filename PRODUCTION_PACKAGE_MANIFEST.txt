@@ -1,27 +1,33 @@
 G-011 — Кнопка и Василий в Парке слов
-FINAL PRODUCTION PACKAGE — SYSTEM VISUAL FIX
+FINAL PRODUCTION PACKAGE — REUSABLE MATCHING TEMPLATE
 
 GAME-ID: G-011
 gameVersion: 1.0.0
 BANK-ID: BANK-01
 bankVersion: v1
 
-Runtime files:
+Runtime:
 - index.html
+- template/matching-template.css
+- visual-packs/word-park.css
 - banks/manifest.js
 - banks/BANK-01.v1.js
 - assets/homonyms/*.svg
 - assets/characters/knopka-vasiliy-approved.png
-- assets/characters/knopka-vasiliy-scene.png
-- assets/visual-preview/start-approved.png  (start screen only, visual-locked)
+- assets/characters/knopka-vasiliy-scene.png (byte-identical canonical copy for legacy-safe scene hook)
 
 Review mirrors:
 - banks/manifest.json
 - banks/BANK-01.v1.json
 
-Visual architecture:
-- start screen remains approved visual lock;
-- gameplay/final environment contains no baked runtime text, cards, progress, feedback or action buttons;
-- all changing state is DOM-only.
+Legacy review asset retained but not used by reusable runtime:
+- assets/visual-preview/start-approved.png
+
+Architecture:
+- dynamic UI is DOM-only;
+- one reusable matching layout across all zones;
+- one reusable zone-complete overlay;
+- final remains in the same template/UI language;
+- Word Park theme is isolated in visual-packs/word-park.css and character assets.
 
 Publish the entire directory preserving relative paths.
