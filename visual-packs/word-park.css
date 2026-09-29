@@ -11,3 +11,228 @@
 #gameScreen[data-zone="ant"]{--zone:#7068b8}
 #gameScreen[data-zone="hom"]{--zone:#3c7fa7}
 #gameScreen[data-zone="phr"]{--zone:#ca7059}
+
+/* FINAL VISUAL CORRECTION — character integration + final composition only.
+   Reusable template core and runtime semantics are intentionally untouched. */
+
+/* Same approved Knopka/Vasiliy identity everywhere, seated naturally on a real surface. */
+#startScreen .characters,
+#gameScreen .feedback-row,
+#finalScreen .approved-final-characters{
+  isolation:isolate;
+}
+#startScreen .characters::before,
+#finalScreen .approved-final-characters::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:14%; right:14%; bottom:2%; height:14%;
+  border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(31,65,45,.28) 0 42%,rgba(31,65,45,.12) 58%,transparent 76%);
+  filter:blur(6px);
+  pointer-events:none;
+}
+#startScreen .characters img,
+#gameScreen .zone-characters,
+#finalScreen .approved-final-characters img{
+  border-radius:0!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  -webkit-mask-image:radial-gradient(ellipse 76% 76% at 50% 50%,#000 0 62%,rgba(0,0,0,.98) 70%,rgba(0,0,0,.55) 86%,transparent 100%);
+  mask-image:radial-gradient(ellipse 76% 76% at 50% 50%,#000 0 62%,rgba(0,0,0,.98) 70%,rgba(0,0,0,.55) 86%,transparent 100%);
+  filter:drop-shadow(0 12px 13px rgba(28,60,43,.18))!important;
+}
+#startScreen .characters img{
+  width:min(430px,92%)!important;
+  max-height:330px!important;
+}
+#gameScreen .zone-characters{
+  width:220px!important;
+  max-width:100%!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  align-self:end!important;
+  filter:drop-shadow(0 10px 11px rgba(31,66,46,.18))!important;
+}
+#gameScreen .feedback-row::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  right:6%; bottom:2%; width:76%; height:12%;
+  border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(34,71,47,.23),rgba(34,71,47,.08) 58%,transparent 76%);
+  filter:blur(5px);
+  pointer-events:none;
+}
+#finalScreen .approved-final-characters{
+  width:255px!important;
+  right:18px!important;
+  bottom:14px!important;
+}
+#finalScreen .approved-final-characters img{
+  width:100%!important;
+  max-width:none!important;
+}
+
+/* Final: same template language, stronger reward focus, quieter actions, integrated result card. */
+#finalScreen .final-card{
+  max-width:1040px!important;
+  margin:0 auto!important;
+  background:linear-gradient(180deg,rgba(255,251,239,.97),rgba(255,247,225,.95))!important;
+  border:1px solid rgba(226,194,130,.76)!important;
+  box-shadow:0 18px 54px rgba(31,65,49,.16),inset 0 1px 0 rgba(255,255,255,.82)!important;
+}
+#finalScreen .final-top{
+  max-width:840px!important;
+  margin:0 auto!important;
+  padding:8px 18px 2px!important;
+}
+#finalScreen .final-top .eyebrow{
+  background:linear-gradient(180deg,#fff3c4,#f5d789)!important;
+  border:1px solid #d2ad64!important;
+  color:#6b5428!important;
+  box-shadow:0 5px 14px rgba(132,98,44,.10)!important;
+}
+#finalScreen .final-top h1{
+  max-width:800px!important;
+  margin:12px auto 7px!important;
+  text-wrap:balance;
+}
+#finalScreen .final-scene{
+  width:min(900px,100%)!important;
+  min-height:365px!important;
+  margin:18px auto 0!important;
+  border:1px solid rgba(135,180,127,.58)!important;
+  box-shadow:inset 0 -28px 55px rgba(54,112,68,.11),0 12px 28px rgba(47,89,63,.10)!important;
+  background:
+    radial-gradient(circle at 53% 44%,rgba(255,238,145,.68) 0 11%,rgba(255,233,131,.24) 12% 23%,transparent 37%),
+    radial-gradient(ellipse at 18% 95%,rgba(83,159,82,.52) 0 24%,transparent 25%),
+    radial-gradient(ellipse at 85% 96%,rgba(73,151,78,.52) 0 27%,transparent 28%),
+    linear-gradient(180deg,#d9f4ff 0 45%,#a7d991 45% 100%)!important;
+}
+#finalScreen .final-map{
+  left:44px!important;
+  top:52px!important;
+  width:258px!important;
+  transform:rotate(-2.5deg)!important;
+  filter:drop-shadow(0 10px 12px rgba(82,72,44,.14));
+}
+#finalScreen .final-gate{
+  left:53%!important;
+  bottom:52px!important;
+  transform:translateX(-50%) scale(1.04)!important;
+  transform-origin:bottom center!important;
+  filter:drop-shadow(0 13px 12px rgba(44,76,52,.16));
+}
+#finalScreen .spark{box-shadow:0 0 20px 10px rgba(255,214,95,.38)!important}
+#finalScreen .final-actions{
+  margin:14px auto 0!important;
+  gap:10px!important;
+}
+#finalScreen .final-actions .primary,
+#finalScreen .final-actions .secondary{
+  min-width:165px!important;
+  min-height:48px!important;
+  padding:10px 18px!important;
+  font-size:14px!important;
+  box-shadow:0 4px 0 rgba(54,82,53,.20),0 9px 18px rgba(44,75,54,.10)!important;
+}
+#finalScreen .teacher-facts{
+  max-width:900px!important;
+  margin:13px auto 0!important;
+}
+#finalScreen .teacher-facts details{
+  border:1px solid #decaa2!important;
+  background:linear-gradient(180deg,#fff9e9,#f8efd9)!important;
+  border-radius:16px!important;
+  box-shadow:0 7px 18px rgba(68,74,47,.08)!important;
+  padding:10px 13px!important;
+}
+#finalScreen .teacher-facts summary{
+  color:#496459!important;
+  font-size:12px!important;
+  letter-spacing:.01em!important;
+}
+#finalScreen .fact{
+  background:rgba(255,255,255,.74)!important;
+  border:1px solid rgba(219,203,167,.58)!important;
+}
+
+@media(max-width:900px){
+  #startScreen .characters img{width:min(380px,92%)!important}
+  #gameScreen .zone-characters{width:155px!important}
+  #finalScreen .approved-final-characters{width:220px!important;right:4px!important}
+  #finalScreen .final-map{left:22px!important;width:230px!important}
+  #finalScreen .final-gate{left:55%!important;transform:translateX(-50%) scale(.92)!important}
+}
+@media(max-width:620px){
+  #startScreen .characters img{width:236px!important;max-height:250px!important}
+  #gameScreen .zone-characters{width:118px!important}
+  #finalScreen .final-scene{min-height:410px!important}
+  #finalScreen .final-map{left:50%!important;top:18px!important;width:220px!important;transform:translateX(-50%) scale(.78) rotate(-2deg)!important;transform-origin:top center!important}
+  #finalScreen .final-gate{left:50%!important;bottom:70px!important;transform:translateX(-50%) scale(.70)!important}
+  #finalScreen .approved-final-characters{right:50%!important;bottom:2px!important;width:185px!important;transform:translateX(50%)!important}
+  #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{min-width:145px!important;flex:1 1 145px!important}
+  #finalScreen .teacher-facts{margin-top:10px!important}
+}
+@media(max-width:360px){
+  #gameScreen .zone-characters{width:104px!important}
+  #finalScreen .approved-final-characters{width:165px!important}
+  #finalScreen .final-scene{min-height:390px!important}
+}
+
+/* Seat characters into the scene with a shared environmental foothold, not a sticker box. */
+#gameScreen .feedback-row::before{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  left:4%; right:4%; bottom:0; height:46%;
+  border-radius:45% 45% 22px 22px;
+  background:
+    radial-gradient(ellipse at 50% 94%,rgba(91,156,82,.38) 0 38%,transparent 39%),
+    radial-gradient(circle at 18% 72%,rgba(105,170,92,.22) 0 12%,transparent 13%),
+    radial-gradient(circle at 82% 69%,rgba(105,170,92,.20) 0 11%,transparent 12%);
+  pointer-events:none;
+}
+#startScreen .characters img,#gameScreen .zone-characters,#finalScreen .approved-final-characters img{
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+}
+#gameScreen .zone-characters{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+#finalScreen .final-actions{
+  width:min(470px,100%)!important;
+  margin:14px auto 0!important;
+}
+#finalScreen .final-actions .primary,
+#finalScreen .final-actions .secondary{
+  width:200px!important;
+  min-width:200px!important;
+  flex:0 0 200px!important;
+}
+#finalScreen .teacher-facts summary{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+#finalScreen .teacher-facts summary::before{
+  content:"✓";
+  display:grid;
+  place-items:center;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:#e5f2df;
+  color:#3f7d53;
+  font-weight:950;
+  flex:0 0 auto;
+}
+@media(max-width:620px){
+  #finalScreen .final-actions{width:100%!important}
+  #finalScreen .final-actions .primary,#finalScreen .final-actions .secondary{
+    width:auto!important;min-width:145px!important;flex:1 1 145px!important;
+  }
+}
